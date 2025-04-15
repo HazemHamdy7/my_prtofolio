@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:my_prtofolio/app_text_styles.dart';
- 
+import 'package:my_prtofolio/extensions.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 class MyAppBar extends StatelessWidget {
   const MyAppBar({super.key});
 
@@ -24,7 +25,7 @@ class AppLogo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text('Portfolio', style: LargeTextStyles().titleLgBold);
+    return Text('Portfolio', style: context.textStyle.titleLgBold);
   }
 }
 
@@ -34,11 +35,24 @@ class AppMenus extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      children: const [
-        Text('Home'),
-        Text('About'),
-        Text('Blog'),
-        Text('About Me'),
+      spacing: 10,
+      children: [
+        Text(
+          AppLocalizations.of(context)!.home,
+          style: context.textStyle.titleMdMedium,
+        ),
+        Text(
+          AppLocalizations.of(context)!.about_me,
+          style: context.textStyle.titleMdMedium,
+        ),
+        Text(
+          AppLocalizations.of(context)!.courses,
+          style: context.textStyle.titleMdMedium,
+        ),
+        Text(
+          AppLocalizations.of(context)!.blog,
+          style: context.textStyle.titleMdMedium,
+        ),
       ],
     );
   }
