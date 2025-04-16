@@ -1,3 +1,7 @@
+class Insets {
+  static const double maxWidth = 1280;
+}
+
 abstract class AppInsets {
   double get padding;
   double get appBarHeight;
