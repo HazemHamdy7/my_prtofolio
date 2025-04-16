@@ -1,21 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:my_prtofolio/extensions.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:my_prtofolio/style/app_size.dart';
 
 class MyAppBar extends StatelessWidget {
   const MyAppBar({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        AppLogo(),
-        Spacer(),
-        AppMenus(),
-        Spacer(),
-        LanguageToggle(),
-        ThemeToggle(),
-      ],
+    return Container(
+      alignment: Alignment.center,
+      height: context.insets.appBarHeight,
+      color: Colors.red,
+      //Theme.of(context).appBarTheme.backgroundColor,
+      padding: EdgeInsets.symmetric(horizontal: context.insets.padding),
+      child: Row(
+        children: [
+          AppLogo(),
+          Spacer(),
+          AppMenus(),
+          Spacer(),
+          LanguageToggle(),
+          ThemeToggle(),
+        ],
+      ),
     );
   }
 }
@@ -35,24 +42,11 @@ class AppMenus extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      spacing: 10,
       children: [
-        Text(
-          AppLocalizations.of(context)!.home,
-          style: context.textStyle.titleMdMedium,
-        ),
-        Text(
-          AppLocalizations.of(context)!.about_me,
-          style: context.textStyle.titleMdMedium,
-        ),
-        Text(
-          AppLocalizations.of(context)!.courses,
-          style: context.textStyle.titleMdMedium,
-        ),
-        Text(
-          AppLocalizations.of(context)!.blog,
-          style: context.textStyle.titleMdMedium,
-        ),
+        Text(context.texts.home),
+        Text(context.texts.courses),
+        Text(context.texts.blog),
+        Text(context.texts.about),
       ],
     );
   }

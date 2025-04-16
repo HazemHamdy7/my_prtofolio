@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:my_prtofolio/home_page.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:my_prtofolio/style/app_theme.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,6 +14,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      darkTheme: AppTheme.dark,
+      themeMode: ThemeMode.dark,
       localizationsDelegates: const [
         /// after adding the localization package, you need to add this line Run flutter gen-l10n
         AppLocalizations.delegate,
