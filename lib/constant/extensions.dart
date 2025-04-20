@@ -10,6 +10,8 @@ extension StyleContext on BuildContext {
   double get width => mediaQuery.size.width;
   double get height => mediaQuery.size.height;
 
+  ThemeData get theme => Theme.of(this);
+
   FormFactorType get formFactor {
     if (width < 600) {
       return FormFactorType.mobile;
@@ -48,4 +50,6 @@ extension StyleContext on BuildContext {
       AppLocalizations.of(this) ??
       AppLocalizations.of(this) ??
       lookupAppLocalizations(Locale('en'));
+
+  ColorScheme get colorScheme => theme.colorScheme;
 }
