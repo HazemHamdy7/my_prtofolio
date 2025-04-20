@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:my_prtofolio/cubit/cubit/theme_cubit.dart';
 import 'package:my_prtofolio/features/appbar/cubit/toogle_language_cubit.dart';
-import 'package:my_prtofolio/features/home/home_page.dart';
+import 'package:my_prtofolio/home_page.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:my_prtofolio/style/app_theme.dart';
 

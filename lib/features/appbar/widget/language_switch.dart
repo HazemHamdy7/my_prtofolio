@@ -4,7 +4,7 @@ import 'package:my_prtofolio/constant/app_icon.dart';
 import 'package:my_prtofolio/helper/extensions.dart';
 import 'package:my_prtofolio/features/appbar/cubit/toogle_language_cubit.dart';
 import 'package:my_prtofolio/helper/gap.dart';
-import 'package:my_prtofolio/widgets/seo_text.dart';
+import 'package:my_prtofolio/shared/seo_text.dart';
 import 'package:svg_flutter/svg_flutter.dart';
 
 class LanguageSwitch extends StatelessWidget {

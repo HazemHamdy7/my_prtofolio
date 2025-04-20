@@ -33,9 +33,9 @@ class _SmallHero extends StatelessWidget {
           child: HeroImage(),
         ),
 
-        gapH(Insets.xl),
+        gapH(Insets.lg),
         HeroText(),
-        gapH(Insets.xxl),
+        gapH(Insets.lg),
         const SmallHeroButton(),
       ],
     );
