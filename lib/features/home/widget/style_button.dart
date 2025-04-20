@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_prtofolio/helper/extensions.dart';
-import 'package:my_prtofolio/widgets/seo_text.dart';
+import 'package:my_prtofolio/shared/seo_text.dart';
 
 class PrimaryButton extends StatelessWidget {
   const PrimaryButton({super.key, required this.title});
@@ -11,6 +11,11 @@ class PrimaryButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: () {},
+      style: ElevatedButton.styleFrom(
+        backgroundColor: context.colorScheme.primary,
+        padding: EdgeInsets.symmetric(horizontal: 20),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
+      ),
       child: Text(
         title,
         style: TextStyle(fontWeight: FontWeight.w500, color: Colors.grey[100]),
