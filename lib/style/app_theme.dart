@@ -32,7 +32,7 @@ class AppTheme {
   static ThemeData get light => ThemeData(
     colorScheme: ColorScheme.light(
       primary: AppColors.primaryColor,
-      surface: Colors.grey[400] ?? Colors.white,
+      surface: Colors.grey[100] ?? Colors.white,
       outline: Colors.grey[300],
       outlineVariant: Colors.grey[200],
       onSurface: Colors.black,
