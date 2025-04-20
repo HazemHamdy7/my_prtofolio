@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:my_prtofolio/constant/app_icon.dart';
-import 'package:my_prtofolio/constant/extensions.dart';
+import 'package:my_prtofolio/helper/extensions.dart';
+import 'package:my_prtofolio/featurs/appbar/cubit/toogle_language_cubit.dart';
 import 'package:my_prtofolio/helper/gap.dart';
 import 'package:my_prtofolio/widgets/seo_text.dart';
 import 'package:svg_flutter/svg_flutter.dart';
 
-class LanguageSiwtch extends StatelessWidget {
-  const LanguageSiwtch({super.key});
+class LanguageSwitch extends StatelessWidget {
+  const LanguageSwitch({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final test = Localizations.localeOf(context).languageCode;
+    final currentLocale = Localizations.localeOf(context).languageCode;
     return PopupMenuButton(
       itemBuilder:
           (context) => [
@@ -18,23 +20,31 @@ class LanguageSiwtch extends StatelessWidget {
               value: 0,
               child: PopupLanguageSwitchItem(
                 language: 'English',
-                icons: AppIcon.us,
+                icons: AppIcons.us,
               ),
             ),
             PopupMenuItem(
               value: 1,
               child: PopupLanguageSwitchItem(
                 language: 'عربى',
-                icons: AppIcon.ar,
+                icons: AppIcons.ar,
               ),
             ),
           ],
-      onSelected: (value) {},
+      onSelected: (value) {
+        // Change language using LocaleCubit
+        final localeCubit = context.read<LocaleCubit>();
+        if (value == 0) {
+          localeCubit.changeLanguage('en');
+        } else if (value == 1) {
+          localeCubit.changeLanguage('ar');
+        }
+      },
       child: Row(
         children: [
           Icon(Icons.language, color: context.colorScheme.onSurface),
           gapH(4),
-          SEOText(test == 'en' ? 'En' : 'عربى'),
+          SEOText(currentLocale == 'en' ? 'En' : 'عربى'),
         ],
       ),
     );
@@ -53,7 +63,7 @@ class PopupLanguageSwitchItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        SvgPicture.asset(icons, width: 18, height: 18),
+        SvgPicture.asset(icons, width: 60, height: 18),
         gapH(10),
 
         SEOText(language),
