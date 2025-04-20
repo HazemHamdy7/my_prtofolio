@@ -1,0 +1,15 @@
+{
+
+     "home": "Home",
+    "about": "About Me",
+    "courses": "Courses",
+    "blog": "Blog",
+    "contact_me": "Contact Me",
+
+    "ahmed_hamdy": "Ahmed Hamdy",
+    "mobile_developer": " Mobile Developer",
+
+    "ahmed_hamdy_desc": "Flutter Developer, Dart, Firebase, and Web Development.",
+    "ahmed_hamdy_desc_2": "I am a Flutter developer with experience in Dart, Firebase, and web development. I have worked on various projects and have a strong understanding of mobile app development."
+
+}
