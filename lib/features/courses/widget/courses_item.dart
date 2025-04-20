@@ -20,6 +20,9 @@ class CoursesItem extends StatelessWidget {
                 child: Image.network(
                   "https://img.freepik.com/free-vector/online-courses-elearning-vector-background-online-courses-text-white-desk-with-laptop-computer_572288-1763.jpg?w=2000",
                   fit: BoxFit.cover,
+                  errorBuilder:
+                      (context, error, stackTrace) =>
+                          const Center(child: Icon(Icons.error)),
                 ),
               ),
             ),
