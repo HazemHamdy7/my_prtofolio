@@ -5,6 +5,7 @@ import 'package:my_prtofolio/features/courses/home_courses_list.dart';
 import 'package:my_prtofolio/features/experienes/experienes_body.dart';
 import 'package:my_prtofolio/features/home/widget/background_blur.dart';
 import 'package:my_prtofolio/features/home/widget/hero_widget.dart';
+import 'package:my_prtofolio/features/testimonil/testimonil_list.dart';
 import 'package:my_prtofolio/style/app_size.dart';
 
 class HomePage extends StatelessWidget {
@@ -20,16 +21,13 @@ class HomePage extends StatelessWidget {
             alignment: Alignment.topCenter,
             child: Container(
               constraints: BoxConstraints(maxWidth: Insets.maxWidth),
-              child: SingleChildScrollView(
-                child: Column(
-                  children: [
-                    const HeroWidget(),
-                    Gap(Insets.lg),
-                    HomeCoursesList(),
-                    Gap(Insets.lg),
-                    ExperienesBody(),
-                  ],
-                ),
+              child: CustomScrollView(
+                slivers: [
+                  SliverToBoxAdapter(child: HeroWidget()),
+                  SliverToBoxAdapter(child: HomeCoursesList()),
+                  SliverToBoxAdapter(child: ExperienesBody()),
+                  TestimonilList(),
+                ],
               ),
             ),
           ),
