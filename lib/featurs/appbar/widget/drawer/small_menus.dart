@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:my_prtofolio/constant/app_menu_list.dart';
-import 'package:my_prtofolio/featurs/appbar/my_app_bar.dart';
 import 'package:my_prtofolio/featurs/appbar/widget/large_app_bar_menu_item.dart';
 
-class LargeMenus extends StatelessWidget {
-  const LargeMenus({super.key});
+class SmallMenus extends StatelessWidget {
+  const SmallMenus({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children:
+    return Column(
+       children:
           AppMenuList.getItem(context)
               .map(
                 (AppMenu e) => LargeAppBarMenuItem(

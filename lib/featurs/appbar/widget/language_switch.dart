@@ -63,8 +63,8 @@ class PopupLanguageSwitchItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        SvgPicture.asset(icons, width: 60, height: 18),
-        gapH(10),
+        Image.asset(icons, width: 18, height: 18),
+        gapW(10),
 
         SEOText(language),
       ],
