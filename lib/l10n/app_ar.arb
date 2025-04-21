@@ -8,5 +8,8 @@
      "mobile_developer": "مطور تطبيقات موبايل",
      "ahmed_hamdy_desc": "مطور Flutter، Dart، Firebase، وتطوير ويب.",
      "ahmed_hamdy_desc_2": "أنا مطور Flutter ولدي خبرة في Dart وFirebase وتطوير الويب. لقد عملت على مشاريع مختلفة ولدي فهم قوي لتطوير تطبيقات الهواتف المحمولة.",
-     "powred_by_flutter": "مدعوم من Flutter"
+     "powred_by_flutter": "مدعوم من Flutter" ,
+     "courses_subtitle": "الدورات التي قمت بإنشائها ونشرها على Udemy",
+     "experienes"    : "الخبرات",
+     "experienes_subtitle" : "خبراتي في مجال تطوير تطبيقات الهواتف المحمولة والبرمجة."
 }

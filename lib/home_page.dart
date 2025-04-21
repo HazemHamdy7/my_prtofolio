@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 import 'package:my_prtofolio/features/appbar/my_app_bar.dart';
 import 'package:my_prtofolio/features/courses/home_courses_list.dart';
 import 'package:my_prtofolio/features/experienes/experienes_body.dart';
@@ -33,7 +34,9 @@ class HomePage extends StatelessWidget {
                       child: HeroWidget(),
                     ),
                   ),
+                  SliverGap(context.insets.gap),
                   SliverToBoxAdapter(child: HomeCoursesList()),
+                  SliverGap(context.insets.gap),
                   SliverToBoxAdapter(child: ExperienesBody()),
                   TestimonilList(),
                   SliverToBoxAdapter(child: MyFooter()),
