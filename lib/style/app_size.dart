@@ -20,7 +20,7 @@ class LagrgeInsets extends AppInsets {
   double get padding => 80;
 
   @override
-  double get appBarHeight => 64;
+  double get appBarHeight => 75;
 
   @override
   double get cardPadding => Insets.xl;
