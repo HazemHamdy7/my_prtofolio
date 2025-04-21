@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:my_prtofolio/helper/extensions.dart';
-import 'package:my_prtofolio/helper/gap.dart';
 import 'package:my_prtofolio/style/app_size.dart';
 import 'package:my_prtofolio/shared/seo_text.dart';
 import 'package:seo_renderer/renderers/text_renderer/text_renderer_style.dart';

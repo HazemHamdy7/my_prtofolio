@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:my_prtofolio/features/appbar/widget/powered_by_flutter.dart';
 import 'package:my_prtofolio/features/home/widget/hero_buttons.dart';
 import 'package:my_prtofolio/features/home/widget/hero_image.dart';
 import 'package:my_prtofolio/features/home/widget/hero_text.dart';
@@ -14,7 +15,9 @@ class HeroWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        context.isDesktop || context.isTablet ? _LargeHero() : _SmallHero(),
+        context.isDesktop || context.isTablet
+            ? const _LargeHero()
+            : const _SmallHero(),
       ],
     );
   }
@@ -29,7 +32,6 @@ class _SmallHero extends StatelessWidget {
       children: [
         ConstrainedBox(
           constraints: BoxConstraints(maxWidth: 140),
-
           child: HeroImage(),
         ),
 
@@ -43,7 +45,7 @@ class _SmallHero extends StatelessWidget {
 }
 
 class _LargeHero extends StatelessWidget {
-  const _LargeHero({super.key});
+  const _LargeHero();
 
   @override
   Widget build(BuildContext context) {

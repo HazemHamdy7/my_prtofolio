@@ -11,6 +11,7 @@ class ExperenceItem extends StatelessWidget {
     return StyledCard(
       width: 300,
       height: 230,
+      borderEffect: true,
       child: Card(
         child: Column(
           children: [
