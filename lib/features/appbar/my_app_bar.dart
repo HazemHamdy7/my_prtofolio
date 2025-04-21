@@ -23,27 +23,20 @@ class MyAppBar extends StatelessWidget {
           child: Container(
             alignment: Alignment.center,
             height: context.insets.appBarHeight,
-            color: context.theme.appBarTheme.backgroundColor,
+            //color: context.theme.appBarTheme.backgroundColor,
             padding: EdgeInsets.symmetric(horizontal: context.insets.padding),
             child: ConstrainedBox(
               constraints: BoxConstraints(maxWidth: Insets.maxWidth),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
+              child: Row(
                 children: [
-                  Center(child: PoweredByFlutter()),
-                  Row(
-                    children: [
-                      AppLogo(),
-                      Spacer(),
-                      if (context.isDesktop) LargeMenus(),
-                      Spacer(),
-                      LanguageSwitch(),
-                      ThemeToggle(),
+                  AppLogo(),
+                  Spacer(),
+                  if (context.isDesktop) LargeMenus(),
+                  Spacer(),
+                  LanguageSwitch(),
+                  ThemeToggle(),
 
-                      if (context.isMobile || context.isTablet)
-                        AppBarDrawerIcon(),
-                    ],
-                  ),
+                  if (context.isMobile || context.isTablet) AppBarDrawerIcon(),
                 ],
               ),
             ),

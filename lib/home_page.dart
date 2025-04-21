@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:my_prtofolio/features/appbar/my_app_bar.dart';
 import 'package:my_prtofolio/features/courses/home_courses_list.dart';
+import 'package:my_prtofolio/features/courses/widget/home_title_subtitle.dart';
 import 'package:my_prtofolio/features/experienes/experienes_body.dart';
 import 'package:my_prtofolio/features/footer/my_footer.dart';
 import 'package:my_prtofolio/features/home/widget/background_blur.dart';
@@ -38,7 +39,20 @@ class HomePage extends StatelessWidget {
                   SliverToBoxAdapter(child: HomeCoursesList()),
                   SliverGap(context.insets.gap),
                   SliverToBoxAdapter(child: ExperienesBody()),
-                  TestimonilList(),
+                  SliverGap(context.insets.gap),
+                  SliverToBoxAdapter(
+                    child: HomeTitleSubtitle(
+                      title: context.texts.testimonials,
+                      subtitle: context.texts.testimonials_subtitle,
+                    ),
+                  ),
+                  SliverGap(32),
+                  SliverPadding(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: context.insets.padding,
+                    ),
+                    sliver: TestimonilList(),
+                  ),
                   SliverToBoxAdapter(child: MyFooter()),
                 ],
               ),

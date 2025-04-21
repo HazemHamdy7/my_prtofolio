@@ -11,5 +11,7 @@
      "powred_by_flutter": "مدعوم من Flutter" ,
      "courses_subtitle": "الدورات التي قمت بإنشائها ونشرها على Udemy",
      "experienes"    : "الخبرات",
-     "experienes_subtitle" : "خبراتي في مجال تطوير تطبيقات الهواتف المحمولة والبرمجة."
+     "experienes_subtitle" : "خبراتي في مجال تطوير تطبيقات الهواتف المحمولة والبرمجة." ,
+     "testimonials" : "الشهادات",
+     "testimonials_subtitle" : "احمد مدرس رائع. يشرح كل شيء بوضوح ودائمًا متاح للمساعدة. !"
 }

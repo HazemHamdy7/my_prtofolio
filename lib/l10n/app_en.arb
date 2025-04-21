@@ -11,5 +11,7 @@
     "powred_by_flutter": "Powered by Flutter",
     "courses_subtitle": "Courses I have created and published on Udemy",
     "experienes"    : "Experiences",
-    "experienes_subtitle" : "My experiences in the field of mobile development and programming."
-}
+    "experienes_subtitle" : "My experiences in the field of mobile development and programming." ,
+    "testimonials" : "Testimonials",
+    "testimonials_subtitle" : "Ahmed is a great instructor. He explains everything clearly and is always available to help."
+ }
