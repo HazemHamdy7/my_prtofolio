@@ -9,6 +9,8 @@ class PoweredByFlutter extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Row(
+        mainAxisSize: MainAxisSize.min,
+        // mainAxisAlignment: MainAxisAlignment.center,
         children: [
           // Flutter logo
           Image.asset(

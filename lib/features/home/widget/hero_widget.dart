@@ -15,6 +15,8 @@ class HeroWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        PoweredByFlutter(),
+
         context.isDesktop || context.isTablet
             ? const _LargeHero()
             : const _SmallHero(),
@@ -34,7 +36,6 @@ class _SmallHero extends StatelessWidget {
           constraints: BoxConstraints(maxWidth: 140),
           child: HeroImage(),
         ),
-
         gapH(Insets.lg),
         HeroText(),
         gapH(Insets.lg),

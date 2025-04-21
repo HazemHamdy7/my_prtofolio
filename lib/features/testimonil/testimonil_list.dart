@@ -39,6 +39,7 @@ class TestimonilPhone extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverList.separated(
+      itemCount: 10,
       itemBuilder: (item, index) => TestimonilItem(),
       separatorBuilder: (context, index) => Gap(16),
     );
