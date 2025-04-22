@@ -6,7 +6,7 @@ import 'package:my_prtofolio/features/home/widget/hero_image.dart';
 import 'package:my_prtofolio/features/home/widget/hero_text.dart';
 import 'package:my_prtofolio/helper/extensions.dart';
 import 'package:my_prtofolio/helper/gap.dart';
-import 'package:my_prtofolio/style/app_size.dart';
+import 'package:my_prtofolio/shared/style/app_size.dart';
 
 class HeroWidget extends StatelessWidget {
   const HeroWidget({super.key});

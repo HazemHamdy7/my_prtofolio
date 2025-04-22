@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:my_prtofolio/features/home/widget/style_button.dart';
 import 'package:my_prtofolio/helper/extensions.dart';
-import 'package:my_prtofolio/style/app_size.dart';
+import 'package:my_prtofolio/shared/style/app_size.dart';
 
 class LargeHeroButtons extends StatelessWidget {
   const LargeHeroButtons({super.key});

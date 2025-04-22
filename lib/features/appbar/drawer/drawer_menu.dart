@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_prtofolio/features/appbar/widget/drawer/small_menus.dart';
+import 'package:my_prtofolio/features/appbar/drawer/small_menus.dart';
 import 'package:my_prtofolio/helper/extensions.dart';
 
 class DrawerMenu extends StatefulWidget {
