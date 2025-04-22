@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_prtofolio/features/appbar/widget/app_scafflod.dart';
+import 'package:my_prtofolio/features/home/presentation/appbar/widget/app_scafflod.dart';
 
 class AboutPage extends StatelessWidget {
   const AboutPage({super.key});

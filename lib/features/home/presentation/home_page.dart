@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:my_prtofolio/features/appbar/my_app_bar.dart';
-import 'package:my_prtofolio/features/appbar/widget/app_scafflod.dart';
+import 'package:my_prtofolio/features/home/presentation/appbar/my_app_bar.dart';
+import 'package:my_prtofolio/features/home/presentation/appbar/widget/app_scafflod.dart';
 import 'package:my_prtofolio/features/courses/widget/home_courses_list.dart';
 import 'package:my_prtofolio/features/courses/widget/home_title_subtitle.dart';
 import 'package:my_prtofolio/features/experienes/experienes_body.dart';
-import 'package:my_prtofolio/features/footer/my_footer.dart';
+import 'package:my_prtofolio/features/home/presentation/footer/my_footer.dart';
 import 'package:my_prtofolio/features/home/widget/background_blur.dart';
 import 'package:my_prtofolio/features/home/widget/hero_widget.dart';
 import 'package:my_prtofolio/features/testimonil/testimonil_list.dart';

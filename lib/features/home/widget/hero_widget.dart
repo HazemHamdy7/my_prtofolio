@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:my_prtofolio/features/appbar/widget/powered_by_flutter.dart';
+import 'package:my_prtofolio/features/home/presentation/appbar/widget/powered_by_flutter.dart';
 import 'package:my_prtofolio/features/home/widget/hero_buttons.dart';
 import 'package:my_prtofolio/features/home/widget/hero_image.dart';
 import 'package:my_prtofolio/features/home/widget/hero_text.dart';
