@@ -13,5 +13,7 @@
     "experienes"    : "Experiences",
     "experienes_subtitle" : "My experiences in the field of mobile development and programming." ,
     "testimonials" : "Testimonials",
-    "testimonials_subtitle" : "Ahmed is a great instructor. He explains everything clearly and is always available to help."
- }
+    "testimonials_subtitle" : "Ahmed is a great instructor. He explains everything clearly and is always available to help.",
+    "about_me"  : "About Me",
+    "about_me_subtitle" : "I am a Flutter developer with experience in Dart, Firebase, and web development. I have worked on various projects and have a strong understanding of mobile app development. I am passionate about learning new technologies and improving my skills. I am always looking for new challenges and opportunities to grow as a developer.  Work for Premium Card Finance Services From (10-2020) - Card Operation specialist Data Review and transfer to department operation system as analyst system form (05-2023) to Now. I am a freelance mobile application developer. (Flutter Developer) And backend developer (Django framework). I work as an accountant from Future Import and Export Company  I was working in a hotel in Sharm EL sheikh as an Accountant for two months.  I worked in Shaheen center for 6 months.  I was a high school assistant. I oversaw office accountant for 5 years.  "
+  }
