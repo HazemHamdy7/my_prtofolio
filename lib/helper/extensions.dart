@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_prtofolio/helper/app_text_styles.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:my_prtofolio/style/app_size.dart';
+import 'package:my_prtofolio/shared/style/app_size.dart';
 
 enum FormFactorType { mobile, tablet, desktop }
 

@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:my_prtofolio/features/appbar/drawer/large_menus.dart';
-
-import 'package:my_prtofolio/features/home/presentation/appbar/drawer/app_bar_drawer_icon.dart';
 import 'package:my_prtofolio/features/home/presentation/appbar/drawer/drawer_menu.dart';
-import 'package:my_prtofolio/features/home/presentation/appbar/widget/app_logo.dart';
-import 'package:my_prtofolio/features/home/presentation/appbar/widget/language_switch.dart';
-import 'package:my_prtofolio/features/home/presentation/appbar/widget/theme_toggle.dart';
 import 'package:my_prtofolio/helper/extensions.dart';
-
+import 'package:my_prtofolio/features/home/presentation/appbar/widget/app_logo.dart';
+import 'package:my_prtofolio/features/home/presentation/appbar/drawer/large_menus.dart';
+import 'package:my_prtofolio/features/home/presentation/appbar/widget/theme_toggle.dart';
 import 'package:my_prtofolio/shared/style/app_size.dart';
+import 'package:my_prtofolio/features/home/presentation/appbar/drawer/app_bar_drawer_icon.dart';
+import 'package:my_prtofolio/features/home/presentation/appbar/widget/language_switch.dart';
 
 class MyAppBar extends StatelessWidget {
   const MyAppBar({super.key});
@@ -24,7 +22,7 @@ class MyAppBar extends StatelessWidget {
           child: Container(
             alignment: Alignment.center,
             height: context.insets.appBarHeight,
-            // color: context.theme.appBarTheme.backgroundColor,
+            //color: context.theme.appBarTheme.backgroundColor,
             padding: EdgeInsets.symmetric(horizontal: context.insets.padding),
             child: ConstrainedBox(
               constraints: BoxConstraints(maxWidth: Insets.maxWidth),

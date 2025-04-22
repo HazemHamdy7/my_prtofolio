@@ -27,7 +27,7 @@ class SmallTextStyles extends AppTextStyles {
       const TextStyle(fontSize: 24, fontWeight: FontWeight.w600);
   @override
   TextStyle get bodyLgMedium =>
-      const TextStyle(fontSize: 20, fontWeight: FontWeight.w500);
+      const TextStyle(fontSize: 16, fontWeight: FontWeight.w500);
 }
 
 class LargeTextStyles extends AppTextStyles {
@@ -48,5 +48,5 @@ class LargeTextStyles extends AppTextStyles {
       const TextStyle(fontSize: 24, fontWeight: FontWeight.w600);
   @override
   TextStyle get bodyLgMedium =>
-      const TextStyle(fontSize: 20, fontWeight: FontWeight.w500);
+      const TextStyle(fontSize: 18, fontWeight: FontWeight.w500);
 }

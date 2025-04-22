@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_prtofolio/helper/app_text_styles.dart';
-import 'package:my_prtofolio/style/app_size.dart';
+import 'package:my_prtofolio/helper/extensions.dart';
+import 'package:my_prtofolio/shared/style/app_size.dart';
 
 class LargeAppBarMenuItem extends StatelessWidget {
   const LargeAppBarMenuItem({
@@ -22,7 +23,16 @@ class LargeAppBarMenuItem extends StatelessWidget {
           horizontal: Insets.med,
           vertical: Insets.xs,
         ),
-        child: Text(text, style: SmallTextStyles().bodyLgMedium),
+        child: Text(
+          text,
+          style: SmallTextStyles().bodyLgMedium.copyWith(
+            color:
+                isSelected
+                    ? context.colorScheme.onBackground
+                    : context.colorScheme.onSurfaceVariant,
+            fontWeight: isSelected ? FontWeight.w600 : FontWeight.w400,
+          ),
+        ),
       ),
     );
   }

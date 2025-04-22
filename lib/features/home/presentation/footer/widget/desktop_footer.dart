@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:my_prtofolio/features/appbar/widget/app_logo.dart';
-import 'package:my_prtofolio/features/appbar/widget/drawer/large_menus.dart';
+import 'package:my_prtofolio/features/home/presentation/appbar/widget/app_logo.dart';
+import 'package:my_prtofolio/features/home/presentation/appbar/drawer/large_menus.dart';
+ import 'package:my_prtofolio/features/home/presentation/footer/widget/footer_links.dart';
 
 class DesktopFooter extends StatelessWidget {
   const DesktopFooter({super.key});
@@ -14,6 +15,7 @@ class DesktopFooter extends StatelessWidget {
         Spacer(),
         LargeMenus(),
         Spacer(),
+        FooterLinks(),
       ],
     );
   }

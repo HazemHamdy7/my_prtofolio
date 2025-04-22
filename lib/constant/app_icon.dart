@@ -6,8 +6,14 @@ class AppIcon {
 }
 
 class AppIcons {
-  static const String _icons = 'assets/images/';
+  static const String _image = 'assets/images/';
 
-  static const String us = '$_icons/usa-flag.png';
-  static const String ar = '$_icons/egypt-flag.png';
+  static const String us = '$_image/usa-flag.png';
+  static const String ar = '$_image/egypt-flag.png';
+
+  // Social Media Icons
+  static const String github = '$_image/github.png';
+  static const String linkedIn = '$_image/linkedin.png';
+  static const String facebook = '$_image/facebook.png';
+  static const String youtube = '$_image/youtube.png';
 }

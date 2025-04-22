@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:my_prtofolio/features/appbar/widget/powered_by_flutter.dart';
+import 'package:my_prtofolio/features/home/presentation/appbar/widget/powered_by_flutter.dart';
 import 'package:my_prtofolio/features/home/widget/hero_buttons.dart';
 import 'package:my_prtofolio/features/home/widget/hero_image.dart';
 import 'package:my_prtofolio/features/home/widget/hero_text.dart';
 import 'package:my_prtofolio/helper/extensions.dart';
 import 'package:my_prtofolio/helper/gap.dart';
-import 'package:my_prtofolio/style/app_size.dart';
+import 'package:my_prtofolio/shared/style/app_size.dart';
 
 class HeroWidget extends StatelessWidget {
   const HeroWidget({super.key});
@@ -15,6 +15,8 @@ class HeroWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        PoweredByFlutter(),
+
         context.isDesktop || context.isTablet
             ? const _LargeHero()
             : const _SmallHero(),
@@ -34,7 +36,6 @@ class _SmallHero extends StatelessWidget {
           constraints: BoxConstraints(maxWidth: 140),
           child: HeroImage(),
         ),
-
         gapH(Insets.lg),
         HeroText(),
         gapH(Insets.lg),
