@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:go_router/go_router.dart';
 import 'package:my_prtofolio/constant/app_icon.dart';
 import 'package:my_prtofolio/features/courses/model/course.dart';
 import 'package:my_prtofolio/helper/extensions.dart';
@@ -13,48 +14,57 @@ class CoursesItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return StyledCard(
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: AspectRatio(
-          aspectRatio: 0.7,
-          child: Column(
-            children: [
-              AspectRatio(
-                aspectRatio: 1.5,
-                child: ClipRRect(
-                  child: Image.asset(AppIcons.me, fit: BoxFit.cover),
-                  // Image.network(
-                  //   course.imageUrl,
-                  //   loadingBuilder: (context, child, loadingProgress) {
-                  //     if (loadingProgress == null) return child;
-                  //     return const Center(child: CircularProgressIndicator());
-                  //   },
-                  //   fit: BoxFit.cover,
-                  // ),
-                ),
-              ),
-              Gap(24),
-              SEOText(
-                course.name,
-                style: context.textStyle.bodyMdMedium.copyWith(
-                  color: context.colorScheme.onBackground,
-                ),
-                textRenderStyle: TextRendererStyle.header4,
-              ),
-              Gap(8),
-              Expanded(
-                child: SEOText(
-                  //  Localizations.localeOf(context).languageCode == 'en'
-                  course.description['en'] ?? 'No description available',
-                  style: context.textStyle.bodyMdMedium.copyWith(
-                    color: context.colorScheme.onSurface,
+    return GestureDetector(
+      onTap: () {
+        context.go('/courses/${course.link}');
+      },
+      child: StyledCard(
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: AspectRatio(
+            aspectRatio: 0.7,
+            child: Column(
+              children: [
+                AspectRatio(
+                  aspectRatio: 1.5,
+                  child: ClipRRect(
+                    child: Image.asset(AppIcons.me),
+
+                    //  Image.network(
+                    //   course.imageUrl,
+                    //   loadingBuilder: (context, child, loadingProgress) {
+                    //     if (loadingProgress == null) return child;
+                    //     return const Center(child: CircularProgressIndicator());
+                    //   },
+                    //   fit: BoxFit.cover,
+                    // ),
                   ),
-                  maxLines: 4,
-                  overflow: TextOverflow.ellipsis,
                 ),
-              ),
-            ],
+                Gap(24),
+                SEOText(
+                  course.name,
+                  style: context.textStyle.bodyleLgBold.copyWith(
+                    color: context.colorScheme.onBackground,
+                  ),
+                  textRenderStyle: TextRendererStyle.header4,
+                ),
+                Gap(8),
+                Expanded(
+                  child: SEOText(
+                    course.description[Localizations.localeOf(
+                          context,
+                        ).languageCode] ??
+                        course.description['en'] ??
+                        '',
+                    style: context.textStyle.bodyMdMedium.copyWith(
+                      color: context.colorScheme.onSurface,
+                    ),
+                    maxLines: 4,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),

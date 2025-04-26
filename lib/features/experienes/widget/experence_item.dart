@@ -1,35 +1,35 @@
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
+import 'package:my_prtofolio/features/experienes/model/experiences.dart';
 import 'package:my_prtofolio/features/experienes/widget/experince_description_item.dart';
 import 'package:my_prtofolio/helper/extensions.dart';
 import 'package:my_prtofolio/shared/styled_card.dart';
 
 class ExperenceItem extends StatelessWidget {
-  const ExperenceItem({super.key});
+  final Experiences experiences;
+  const ExperenceItem({super.key, required this.experiences});
 
   @override
   Widget build(BuildContext context) {
     return StyledCard(
-      width: 300,
+      width: 330,
       height: 230,
       borderEffect: true,
       child: Card(
         child: Column(
           children: [
             Text(
-              'Experience Title',
+              experiences.title[Localizations.localeOf(context).languageCode] ??
+                  experiences.title['en'] ??
+                  'Title',
               style: context.textStyle.bodyleLgBold.copyWith(
-                color: context.colorScheme.onBackground,
+                color: context.colorScheme.primary,
               ),
             ),
+            Gap(10),
             Expanded(
               child: Column(
-                children: [
-                  const ExperinceDescriptionItem(),
-                  const ExperinceDescriptionItem(),
-                  const ExperinceDescriptionItem(),
-                  const ExperinceDescriptionItem(),
-                  const ExperinceDescriptionItem(),
-                ],
+                children: [ExperinceDescriptionItem(experiences: experiences)],
               ),
             ),
           ],

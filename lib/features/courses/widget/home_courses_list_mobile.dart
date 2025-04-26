@@ -28,7 +28,7 @@ class HomeCoursesListMobile extends StatelessWidget {
               itemCount: courses.length,
               itemBuilder:
                   (context, index) => Padding(
-                    padding: const EdgeInsets. all(15.0),
+                    padding: const EdgeInsets.all(15.0),
                     child: CoursesItem(course: courses[index]),
                   ),
             );

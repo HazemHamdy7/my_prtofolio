@@ -12,10 +12,10 @@ class CoursesCubit extends Cubit<CoursesState> {
       final querySnapshot =
           await FirebaseFirestore.instance.collection('courses').get();
       final courses =
-          querySnapshot.docs.map((doc) => Course.fromFirestore(doc)).toList();
+          querySnapshot.docs.map((doc) => Course.fromJson(doc.data())).toList();
       emit(CoursesLoaded(courses: courses));
     } catch (e) {
-      emit(CoursesError('Failed to load courses: $e'));
+      emit(CoursesError(message: e.toString()));
     }
   }
 }
