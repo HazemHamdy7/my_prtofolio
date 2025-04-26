@@ -20,8 +20,8 @@ class Course {
       // Replace 'fieldName' with actual field names from your Firestore document
       name: data['name'] ?? '',
       description: data['description'] ?? '',
-      imageUrl: '',
-      link: '',
+      imageUrl: 'image_url',
+      link: 'link',
     );
   }
 

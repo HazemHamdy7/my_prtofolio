@@ -19,7 +19,6 @@ class CoursesPage extends StatelessWidget {
           BlocBuilder<CoursesCubit, CoursesState>(
             builder: (context, state) {
               if (state is CoursesInitial) {
-                print('Courses Initial State');
                 return const SliverToBoxAdapter(
                   child: Center(child: Text('Initializing...')),
                 );
@@ -28,7 +27,6 @@ class CoursesPage extends StatelessWidget {
                   child: Center(child: CircularProgressIndicator()),
                 );
               } else if (state is CoursesLoaded) {
-                print('Courses Loaded: ${state.courses.length}');
                 final courses = (state).courses;
                 return SliverPadding(
                   padding: EdgeInsets.all(context.insets.padding),
