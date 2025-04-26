@@ -1,21 +1,13 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:my_prtofolio/features/courses/model/course.dart';
 
-sealed class CoursesState {}
+part 'courses_state.freezed.dart';
 
-final class CoursesInitial extends CoursesState {}
-
-final class CoursesLoading extends CoursesState {}
-
-final class CoursesLoaded extends CoursesState {
-  final List<Course> courses;
-
-  CoursesLoaded({required this.courses});
+@freezed
+class CoursesState with _$CoursesState {
+  const factory CoursesState.initial() = CoursesInitial;
+  const factory CoursesState.loading() = CoursesLoading;
+  const factory CoursesState.loaded({required List<Course> courses}) =
+      CoursesLoaded;
+  const factory CoursesState.error({required String message}) = CoursesError;
 }
-
-final class CoursesError extends CoursesState {
-  final String message;
-
-  CoursesError(this.message);
-}
-
-final class CoursesEmpty extends CoursesState {}

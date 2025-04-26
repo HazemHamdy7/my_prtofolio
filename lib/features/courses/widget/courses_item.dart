@@ -43,8 +43,11 @@ class CoursesItem extends StatelessWidget {
               Gap(8),
               Expanded(
                 child: SEOText(
-                  //  Localizations.localeOf(context).languageCode == 'en'
-                  course.description['en'] ?? 'No description available',
+                  course.description[Localizations.localeOf(
+                        context,
+                      ).languageCode] ??
+                      course.description['en'] ??
+                      '',
                   style: context.textStyle.bodyMdMedium.copyWith(
                     color: context.colorScheme.onSurface,
                   ),

@@ -53,8 +53,8 @@ dependencies:
   firebase_auth: ^5.5.2
   firebase_storage: ^12.4.5
   #   Freezed is a code generator for immutable classes in Dart.
-  # freezed: ^3.0.6
-  # freezed_annotation: ^3.0.0 
+  freezed: ^3.0.6
+  freezed_annotation: ^3.0.0 
   build_runner: ^2.4.15
   json_serializable: ^6.9.5
   json_annotation: ^4.9.0

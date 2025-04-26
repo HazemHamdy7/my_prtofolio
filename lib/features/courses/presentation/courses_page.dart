@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:my_prtofolio/features/courses/logic/cubit/courses_cubit.dart';
 import 'package:my_prtofolio/features/courses/logic/cubit/courses_state.dart';
-
 import 'package:my_prtofolio/features/courses/widget/courses_item.dart';
 import 'package:my_prtofolio/features/home/presentation/appbar/widget/app_scafflod.dart';
 import 'package:my_prtofolio/helper/extensions.dart';
@@ -18,44 +17,36 @@ class CoursesPage extends StatelessWidget {
         slivers: [
           BlocBuilder<CoursesCubit, CoursesState>(
             builder: (context, state) {
-              if (state is CoursesInitial) {
-                print('Courses Initial State');
-                return const SliverToBoxAdapter(
-                  child: Center(child: Text('Initializing...')),
-                );
-              } else if (state is CoursesLoading) {
+              if (state is CoursesLoading) {
                 return const SliverToBoxAdapter(
                   child: Center(child: CircularProgressIndicator()),
                 );
               } else if (state is CoursesLoaded) {
-                print('Courses Loaded: ${state.courses.length}');
-                final courses = (state).courses;
                 return SliverPadding(
                   padding: EdgeInsets.all(context.insets.padding),
                   sliver: SliverGrid.builder(
-                    itemCount: courses.length,
+                    itemCount: state.courses.length,
                     gridDelegate:
                         const SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount:
-                              3, // Adjust for responsiveness if needed
+                          crossAxisCount: 3,
                           crossAxisSpacing: 24,
                           mainAxisSpacing: 24,
                           childAspectRatio: 0.8,
                         ),
                     itemBuilder:
-                        (context, index) => CoursesItem(course: courses[index]),
+                        (context, index) =>
+                            CoursesItem(course: state.courses[index]),
                   ),
                 );
               } else if (state is CoursesError) {
-                final message = (state).message;
                 return SliverToBoxAdapter(
-                  child: Center(child: Text('Error: $message')),
+                  child: Center(child: Text('Error: ${state.message}')),
+                );
+              } else {
+                return const SliverToBoxAdapter(
+                  child: Center(child: Text('No Data')),
                 );
               }
-              // Fallback for unexpected states
-              return const SliverToBoxAdapter(
-                child: Center(child: Text('Unknown state')),
-              );
             },
           ),
         ],
