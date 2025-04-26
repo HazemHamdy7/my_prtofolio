@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:my_prtofolio/features/courses/model/course.dart';
 import 'package:my_prtofolio/helper/extensions.dart';
 import 'package:my_prtofolio/shared/seo_text.dart';
 import 'package:my_prtofolio/shared/styled_card.dart';
 import 'package:seo_renderer/renderers/text_renderer/text_renderer_style.dart';
 
 class CoursesItem extends StatelessWidget {
-  const CoursesItem({super.key});
+  final Course course;
+  const CoursesItem({super.key, required this.course});
 
   @override
   Widget build(BuildContext context) {
@@ -21,17 +23,18 @@ class CoursesItem extends StatelessWidget {
                 aspectRatio: 1.5,
                 child: ClipRRect(
                   child: Image.network(
-                    "https://img.freepik.com/free-vector/online-courses-elearning-vector-background-online-courses-text-white-desk-with-laptop-computer_572288-1763.jpg?w=2000",
+                    course.imageUrl,
+                    loadingBuilder: (context, child, loadingProgress) {
+                      if (loadingProgress == null) return child;
+                      return const Center(child: CircularProgressIndicator());
+                    },
                     fit: BoxFit.cover,
-                    errorBuilder:
-                        (context, error, stackTrace) =>
-                            const Center(child: Icon(Icons.error)),
                   ),
                 ),
               ),
               Gap(24),
               SEOText(
-                "Course Title",
+                course.name,
                 style: context.textStyle.bodyleLgBold.copyWith(
                   color: context.colorScheme.onBackground,
                 ),
@@ -40,7 +43,8 @@ class CoursesItem extends StatelessWidget {
               Gap(8),
               Expanded(
                 child: SEOText(
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                  //  Localizations.localeOf(context).languageCode == 'en'
+                  course.description['en'] ?? 'No description available',
                   style: context.textStyle.bodyMdMedium.copyWith(
                     color: context.colorScheme.onSurface,
                   ),

@@ -11,9 +11,9 @@ class HomeCoursrsListDesktop extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: context.insets.padding),
       child: Row(
         children: [
-          Expanded(child: const CoursesItem()),
-          Expanded(child: const CoursesItem()),
-          Expanded(child: const CoursesItem()),
+          // Expanded(child: const CoursesItem()),
+          // Expanded(child: const CoursesItem()),
+          // Expanded(child: const CoursesItem()),
         ],
       ),
     );
