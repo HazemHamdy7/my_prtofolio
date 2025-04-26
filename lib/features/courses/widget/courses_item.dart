@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:my_prtofolio/constant/app_icon.dart';
 import 'package:my_prtofolio/features/courses/model/course.dart';
 import 'package:my_prtofolio/helper/extensions.dart';
 import 'package:my_prtofolio/shared/seo_text.dart';
@@ -22,14 +23,15 @@ class CoursesItem extends StatelessWidget {
               AspectRatio(
                 aspectRatio: 1.5,
                 child: ClipRRect(
-                  child: Image.network(
-                    course.imageUrl,
-                    loadingBuilder: (context, child, loadingProgress) {
-                      if (loadingProgress == null) return child;
-                      return const Center(child: CircularProgressIndicator());
-                    },
-                    fit: BoxFit.cover,
-                  ),
+                  child: Image.asset(AppIcons.me, fit: BoxFit.cover),
+                  // Image.network(
+                  //   course.imageUrl,
+                  //   loadingBuilder: (context, child, loadingProgress) {
+                  //     if (loadingProgress == null) return child;
+                  //     return const Center(child: CircularProgressIndicator());
+                  //   },
+                  //   fit: BoxFit.cover,
+                  // ),
                 ),
               ),
               Gap(24),
