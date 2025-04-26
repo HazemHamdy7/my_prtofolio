@@ -15,7 +15,7 @@ extension StyleContext on BuildContext {
   FormFactorType get formFactor {
     if (width < 600) {
       return FormFactorType.mobile;
-    } else if (width < 900) {
+    } else if (width < 800) {
       return FormFactorType.tablet;
     } else {
       return FormFactorType.desktop;

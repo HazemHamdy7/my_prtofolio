@@ -35,7 +35,7 @@ class CoursesItem extends StatelessWidget {
               Gap(24),
               SEOText(
                 course.name,
-                style: context.textStyle.bodyleLgBold.copyWith(
+                style: context.textStyle.bodyMdMedium.copyWith(
                   color: context.colorScheme.onBackground,
                 ),
                 textRenderStyle: TextRendererStyle.header4,

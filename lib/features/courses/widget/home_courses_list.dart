@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
- import 'package:my_prtofolio/features/courses/widget/home_courses_list_mobile.dart';
-import 'package:my_prtofolio/features/courses/widget/home_coursrs_list_desktop.dart';
+import 'package:my_prtofolio/features/courses/widget/home_courses_list_mobile.dart';
+import 'package:my_prtofolio/features/courses/widget/home_courses_list_desktop.dart';
 import 'package:my_prtofolio/features/courses/widget/home_title_subtitle.dart';
 import 'package:my_prtofolio/helper/extensions.dart';
 
@@ -19,7 +19,7 @@ class HomeCoursesList extends StatelessWidget {
         ),
         Gap(32),
         context.isDesktop
-            ? const HomeCoursrsListDesktop()
+            ? const HomeCoursesListDesktop()
             : HomeCoursesListMobile(),
       ],
     );
