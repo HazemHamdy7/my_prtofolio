@@ -17,10 +17,10 @@ class HomeCoursesListMobile extends StatelessWidget {
 
           child: Row(
             children: [
-              SizedBox(width: 240, child: const CoursesItem()),
-              SizedBox(width: 240, child: const CoursesItem()),
-              SizedBox(width: 240, child: const CoursesItem()),
-              SizedBox(width: 240, child: const CoursesItem()),
+              // SizedBox(width: 240, child: const CoursesItem()),
+              // SizedBox(width: 240, child: const CoursesItem()),
+              // SizedBox(width: 240, child: const CoursesItem()),
+              // SizedBox(width: 240, child: const CoursesItem()),
             ],
           ),
         ),
