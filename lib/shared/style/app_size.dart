@@ -4,6 +4,7 @@ class Insets {
   static double get med => 12;
   static double get lg => 16;
   static double get xl => 24;
+
   static double get xxl => 21;
   static double get xxxl => 80;
   static const double maxWidth = 1280;
@@ -13,6 +14,7 @@ abstract class AppInsets {
   double get padding;
   double get appBarHeight;
   double get cardPadding;
+  double get smallCardPadding;
   double get gap;
 }
 
@@ -28,6 +30,10 @@ class LagrgeInsets extends AppInsets {
 
   @override
   double get gap => 120;
+  
+  @override
+ 
+  double get smallCardPadding => Insets.lg;
 }
 
 class SmallInsets extends AppInsets {
@@ -42,4 +48,8 @@ class SmallInsets extends AppInsets {
 
   @override
   double get gap => 72;
+  
+  @override
+  
+  double get smallCardPadding => Insets.lg;
 }

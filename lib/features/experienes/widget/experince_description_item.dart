@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:my_prtofolio/features/experienes/model/experiences.dart';
 import 'package:my_prtofolio/helper/extensions.dart';
+import 'package:my_prtofolio/shared/seo_text.dart';
 
 class ExperinceDescriptionItem extends StatelessWidget {
-  const ExperinceDescriptionItem({super.key});
+  final Experiences experiences;
+
+  const ExperinceDescriptionItem({super.key, required this.experiences});
 
   @override
   Widget build(BuildContext context) {
@@ -20,8 +24,14 @@ class ExperinceDescriptionItem extends StatelessWidget {
         ),
         Gap(3),
         Expanded(
-          child: Text(
-            'Experience Description',
+          child: SEOText(
+            maxLines: 5,
+            overflow: TextOverflow.ellipsis,
+            experiences.description[Localizations.localeOf(
+                  context,
+                ).languageCode] ??
+                experiences.description['en'] ??
+                'Description',
             style: context.textStyle.bodyMdMedium.copyWith(
               color: context.colorScheme.onSurface,
               fontWeight: FontWeight.w400,

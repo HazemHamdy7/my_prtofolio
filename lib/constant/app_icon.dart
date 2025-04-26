@@ -10,6 +10,7 @@ class AppIcons {
 
   static const String us = '$_image/usa-flag.png';
   static const String ar = '$_image/egypt-flag.png';
+  static const String me = '$_image/me.jpg';
 
   // Social Media Icons
   static const String github = '$_image/github.png';
