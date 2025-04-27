@@ -14,7 +14,7 @@ class FooterLinks extends StatelessWidget {
         FooterLinkItem(
           icon: AppIcons.github,
           onPressed:
-              () => handleButtonClick(
+              () => openUrlOnTap(
                 context: context,
                 url: 'https://github.com/HazemHamdy7/',
               ),
@@ -22,7 +22,7 @@ class FooterLinks extends StatelessWidget {
         FooterLinkItem(
           icon: AppIcons.linkedIn,
           onPressed:
-              () => handleButtonClick(
+              () => openUrlOnTap(
                 context: context,
                 url: 'https://www.linkedin.com/in/ahmed-hamdy-416463195/',
               ),
@@ -30,15 +30,15 @@ class FooterLinks extends StatelessWidget {
         FooterLinkItem(
           icon: AppIcons.facebook,
           onPressed:
-              () => handleButtonClick(
+              () => openUrlOnTap(
                 context: context,
-                url: 'https://www.facebook.com/',
+                url: 'https://www.facebook.com/hazemhamdy107@yahoo.com',
               ),
         ),
         FooterLinkItem(
           icon: AppIcons.youtube,
           onPressed:
-              () => handleButtonClick(
+              () => openUrlOnTap(
                 context: context,
                 url: 'https://www.youtube.com/@HazemHamdy7',
               ),
