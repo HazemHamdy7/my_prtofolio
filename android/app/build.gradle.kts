@@ -11,7 +11,7 @@ plugins {
 android {
     namespace = "com.example.my_prtofolio"
     compileSdk = flutter.compileSdkVersion
-    ndkVersion = flutter.ndkVersion
+    ndkVersion = "27.0.12077973"
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
@@ -31,6 +31,21 @@ android {
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
         versionName = flutter.versionName
+    }
+
+    flavorDimensions += "default"
+      productFlavors {
+        create("development") {
+            dimension = "default"
+            applicationIdSuffix = ".development"
+            resValue("string", "app_name", "my_prtofolio development")
+        }
+        create("production") {
+            dimension = "default"
+            applicationIdSuffix = ".production"
+            resValue("string", "app_name", "my_prtofolio production")
+
+        }
     }
 
     buildTypes {
