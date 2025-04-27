@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-Future<void> handleButtonClick({
+Future<void> openUrlOnTap({
   required BuildContext context,
   required String url,
   String? buttonText,
