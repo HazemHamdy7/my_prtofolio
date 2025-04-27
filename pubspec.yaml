@@ -58,6 +58,7 @@ dependencies:
   build_runner: ^2.4.15
   json_serializable: ^6.9.5
   json_annotation: ^4.9.0
+  url_launcher: ^6.3.1
 
 dev_dependencies:
   flutter_test:
@@ -86,6 +87,10 @@ flutter:
   assets:
     - assets/images/
     - assets/icons/
+
+
+flutter_gen:
+  synthetic-package: false    
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
