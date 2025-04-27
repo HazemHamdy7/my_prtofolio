@@ -20,9 +20,9 @@ class CoursesItem extends StatelessWidget {
       },
       child: StyledCard(
         child: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(4.0),
           child: AspectRatio(
-            aspectRatio: 0.7,
+            aspectRatio: context.isDesktop ? 0.7 : 0.9,
             child: Column(
               children: [
                 AspectRatio(
