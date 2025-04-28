@@ -37,6 +37,7 @@ class HomePage extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: context.insets.padding),
           sliver: TestimonilList(),
         ),
+        SliverGap(context.insets.gap),
       ],
     );
   }
