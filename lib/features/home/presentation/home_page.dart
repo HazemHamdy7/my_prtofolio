@@ -4,6 +4,7 @@ import 'package:my_prtofolio/features/home/presentation/appbar/widget/app_scaffl
 import 'package:my_prtofolio/features/courses/widget/home_courses_list.dart';
 import 'package:my_prtofolio/features/courses/widget/home_title_subtitle.dart';
 import 'package:my_prtofolio/features/experienes/presentation/experienes_body.dart';
+import 'package:my_prtofolio/features/home/presentation/my_services/presentation/services_page.dart';
 import 'package:my_prtofolio/features/home/widget/hero_widget.dart';
 import 'package:my_prtofolio/features/testimonil/testimonil_list.dart';
 import 'package:my_prtofolio/helper/extensions.dart';
@@ -33,6 +34,9 @@ class HomePage extends StatelessWidget {
           ),
         ),
         SliverGap(32),
+        SliverToBoxAdapter(child: ServicesPage()),
+        SliverGap(32),
+
         SliverPadding(
           padding: EdgeInsets.symmetric(horizontal: context.insets.padding),
           sliver: TestimonilList(),
