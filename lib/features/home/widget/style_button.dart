@@ -3,16 +3,23 @@ import 'package:my_prtofolio/helper/extensions.dart';
 import 'package:my_prtofolio/shared/seo_text.dart';
 
 class PrimaryButton extends StatelessWidget {
-  const PrimaryButton({super.key, required this.title});
+  const PrimaryButton({
+    super.key,
+    required this.title,
+    this.onPressed,
+    this.backgroundColor,
+  });
 
   final String title;
+  final void Function()? onPressed;
+  final Color? backgroundColor;
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: () {},
+      onPressed: onPressed,
       style: ElevatedButton.styleFrom(
-        backgroundColor: context.colorScheme.primary,
+        backgroundColor: backgroundColor,
         padding: EdgeInsets.symmetric(horizontal: 20),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
       ),
