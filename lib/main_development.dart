@@ -14,6 +14,7 @@ void main() async {
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(const MyApp());
 }
+// ?flutter gen-l10n
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

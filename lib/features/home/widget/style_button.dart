@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:my_prtofolio/helper/extensions.dart';
 import 'package:my_prtofolio/shared/seo_text.dart';
 
@@ -17,7 +18,9 @@ class PrimaryButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: onPressed,
+      onPressed: () {
+        context.go('/courses');
+      },
       style: ElevatedButton.styleFrom(
         backgroundColor: backgroundColor,
         padding: EdgeInsets.symmetric(horizontal: 20),
