@@ -27,14 +27,15 @@ class HomePage extends StatelessWidget {
         SliverGap(context.insets.gap),
         SliverToBoxAdapter(child: ExperienesBody()),
         SliverGap(context.insets.gap),
+        SliverToBoxAdapter(child: ServicesPage()),
+        SliverGap(context.insets.gap),
+
         SliverToBoxAdapter(
           child: HomeTitleSubtitle(
             title: context.texts.testimonials,
             subtitle: context.texts.testimonials_subtitle,
           ),
         ),
-        SliverGap(32),
-        SliverToBoxAdapter(child: ServicesPage()),
         SliverGap(32),
 
         SliverPadding(
