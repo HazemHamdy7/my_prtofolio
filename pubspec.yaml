@@ -88,7 +88,12 @@ flutter:
     - assets/images/
     - assets/icons/
 
-
+flutter_assets:
+  assets_path: assets/
+  output_path: lib/constants/
+  filename: assets.dart
+  field_prefix:
+  
 flutter_gen:
   synthetic-package: false    
   #   - images/a_dot_ham.jpeg
