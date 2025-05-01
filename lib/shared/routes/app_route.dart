@@ -9,6 +9,7 @@ class Routes {
   static const String courses = '/courses';
   static const String blog = '/blog';
   static const String about = '/about';
+  // static const String viewCourses = '/viewCourses';
 }
 
 class AppRoute {
@@ -34,6 +35,11 @@ class AppRoute {
         builder: (context, state) => const AboutPage(),
         pageBuilder: (context, state) => NoTransitionPage(child: AboutPage()),
       ),
+      // GoRoute(
+      //   path: Routes.viewCourses,
+      //   builder: (context, state) => const ViewCourses(),
+      //   pageBuilder: (context, state) => NoTransitionPage(child: ViewCourses()),
+      // ),
     ],
   );
 }

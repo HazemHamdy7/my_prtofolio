@@ -4,6 +4,7 @@ import 'package:my_prtofolio/features/courses/logic/cubit/courses_cubit.dart';
 import 'package:my_prtofolio/features/courses/logic/cubit/courses_state.dart';
 import 'package:my_prtofolio/features/courses/widget/courses_item.dart';
 import 'package:my_prtofolio/helper/extensions.dart';
+import 'package:visibility_detector/visibility_detector.dart';
 
 class HomeCoursesListDesktop extends StatelessWidget {
   const HomeCoursesListDesktop({super.key});
@@ -40,7 +41,7 @@ class HomeCoursesListDesktop extends StatelessWidget {
                         ),
                         itemBuilder:
                             (context, index) =>
-                                CoursesItem(course: state.courses[index]),
+                                _AnimatedServiceItem(service: courses[index]),
                       ),
                     ),
                   ],
@@ -53,6 +54,45 @@ class HomeCoursesListDesktop extends StatelessWidget {
             return const Center(child: Text('Unexpected state'));
           },
         ),
+      ),
+    );
+  }
+}
+
+class _AnimatedServiceItem extends StatefulWidget {
+  final dynamic service;
+
+  const _AnimatedServiceItem({required this.service});
+
+  @override
+  State<_AnimatedServiceItem> createState() => _AnimatedServiceItemState();
+}
+
+class _AnimatedServiceItemState extends State<_AnimatedServiceItem> {
+  bool _isVisible = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return VisibilityDetector(
+      key: Key(widget.service.name), // بدل title
+      onVisibilityChanged: (info) {
+        if (info.visibleFraction > 0.2 && !_isVisible) {
+          setState(() => _isVisible = true);
+        }
+      },
+      child: TweenAnimationBuilder(
+        duration: const Duration(milliseconds: 3000),
+        tween: Tween<double>(begin: 0.0, end: _isVisible ? 1.0 : 0.0),
+        curve: Curves.easeOutCubic,
+        builder: (context, value, child) {
+          return Transform.translate(
+            offset: Offset(0, 30 * (1 - value)),
+            child: Opacity(
+              opacity: value,
+              child: CoursesItem(course: widget.service),
+            ),
+          );
+        },
       ),
     );
   }

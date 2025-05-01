@@ -1,6 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:gap/gap.dart';
 import 'package:my_prtofolio/helper/extensions.dart';
+import 'package:my_prtofolio/shared/style/app_colors.dart';
 
 class PoweredByFlutter extends StatelessWidget {
   const PoweredByFlutter({super.key});
@@ -17,7 +18,7 @@ class PoweredByFlutter extends StatelessWidget {
             'assets/images/flutter_logo.png',
             width: 24,
             height: 24,
-            color: context.colorScheme.onBackground,
+            color: AppColors.primaryColor,
           ),
           Gap(8),
           Text(
