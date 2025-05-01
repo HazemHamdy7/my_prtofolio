@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:my_prtofolio/helper/extensions.dart';
 import 'package:my_prtofolio/shared/seo_text.dart';
-import 'package:my_prtofolio/shared/styled_card.dart';
+import 'package:my_prtofolio/shared/style/app_colors.dart';
 
 class CustomCardServices extends StatelessWidget {
   final String title;
@@ -22,7 +22,7 @@ class CustomCardServices extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(30),
-        color: context.colorScheme.background,
+        // color: context.colorScheme.background,
         border: Border.all(color: context.colorScheme.outline),
       ),
       child: Card(
@@ -44,7 +44,7 @@ class CustomCardServices extends StatelessWidget {
                 child: Image.asset(
                   imageUrl,
                   fit: BoxFit.cover,
-                  color: Colors.teal,
+                  color: AppColors.primaryColor,
                 ),
               ),
               Gap(16),
@@ -64,7 +64,7 @@ class CustomCardServices extends StatelessWidget {
                   color: context.colorScheme.onBackground,
                 ),
               ),
-              Gap(10),
+              Gap(16),
 
               _CustomButtonCard(onPressed: () {}, buttonTitle: buttonTitle),
             ],
@@ -85,16 +85,22 @@ class _CustomButtonCard extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
-        color: const Color.fromARGB(255, 6, 226, 179),
+        color: AppColors.primaryColor,
+
+        // color: const Color.fromARGB(255, 6, 226, 179),
         boxShadow: [
           BoxShadow(
-            color: Colors.teal.withOpacity(0.2),
+            color: AppColors.primaryColor,
+
+            // color: Colors.teal.withOpacity(0.2),
             spreadRadius: 2,
-            blurRadius: 5,
-            offset: Offset(2, 2),
+            blurRadius: 1,
+            offset: Offset(0, 1),
           ),
           BoxShadow(
-            color: const Color.fromARGB(255, 6, 226, 179).withOpacity(0.3),
+            color: AppColors.primaryColor,
+
+            // color: const Color.fromARGB(255, 6, 226, 179).withOpacity(0.3),
             spreadRadius: 3,
             blurRadius: 7,
             offset: Offset(0, 0),
