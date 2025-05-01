@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:my_prtofolio/constants/assets.dart';
 import 'package:my_prtofolio/helper/extensions.dart';
 import 'package:my_prtofolio/shared/styled_card.dart';
 
@@ -17,7 +18,9 @@ class TestimonilItem extends StatelessWidget {
                 width: 40,
                 height: 40,
 
-                child: CircleAvatar(backgroundImage: Image.network('').image),
+                child: CircleAvatar(
+                  backgroundImage: Image.asset(Assets.imagesMe).image,
+                ),
               ),
               Gap(16),
 
