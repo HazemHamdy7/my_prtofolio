@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:my_prtofolio/features/home/presentation/appbar/widget/app_scafflod.dart';
 import 'package:my_prtofolio/helper/extensions.dart';
+import 'package:my_prtofolio/helper/font_size_responsive.dart';
 import 'package:my_prtofolio/shared/seo_text.dart';
-import 'package:seo_renderer/renderers/text_renderer/text_renderer_style.dart';
+import 'package:my_prtofolio/shared/style/app_colors.dart';
 
 class AboutPage extends StatelessWidget {
   const AboutPage({super.key});
@@ -25,7 +26,10 @@ class AboutPage extends StatelessWidget {
                         text: context.texts.about,
                         style: TextStyle(
                           color: Colors.white,
-                          fontSize: 20,
+                          fontSize: getResponsiveFontSize(
+                            context,
+                            fontSize: 24,
+                          ),
                           fontWeight: FontWeight.w600,
                         ),
                       ),
@@ -33,8 +37,11 @@ class AboutPage extends StatelessWidget {
                       TextSpan(
                         text: context.texts.me,
                         style: TextStyle(
-                          color: const Color.fromARGB(255, 9, 218, 197),
-                          fontSize: 20,
+                          color: AppColors.primaryColor,
+                          fontSize: getResponsiveFontSize(
+                            context,
+                            fontSize: 24,
+                          ),
                           fontWeight: FontWeight.w600,
                         ),
                       ),
@@ -50,36 +57,17 @@ class AboutPage extends StatelessWidget {
                     scale: 2.5,
                   ),
                 ),
-                // SEOText(
-                //   context.texts.ahmed_hamdy_desc,
-                //   style: context.textStyle.titleSimeBold,
-                //   textRenderStyle: TextRendererStyle.header1,
-                // ),
+
                 Gap(16),
-                RichText(
-                  text: TextSpan(
-                    children: [
-                      TextSpan(
-                        text: context.texts.my,
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 20,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-
-                      TextSpan(
-                        text: ' ${context.texts.services}',
-                        style: TextStyle(
-                          color: const Color.fromARGB(255, 9, 218, 197),
-                          fontSize: 20,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                    ],
+                SEOText(
+                  "My Services",
+                  style: TextStyle(
+                    color: AppColors.primaryColor,
+                    fontSize: getResponsiveFontSize(context, fontSize: 24),
+                    fontWeight: FontWeight.bold,
                   ),
+                  textAlign: TextAlign.center,
                 ),
-
                 Gap(16),
                 Text(
                   context.texts.about_me_subtitle2,

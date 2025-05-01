@@ -5,7 +5,6 @@ import 'package:my_prtofolio/constant/app_icon.dart';
 import 'package:my_prtofolio/features/courses/model/course.dart';
 import 'package:my_prtofolio/helper/extensions.dart';
 import 'package:my_prtofolio/shared/seo_text.dart';
-import 'package:my_prtofolio/shared/styled_card.dart';
 import 'package:seo_renderer/renderers/text_renderer/text_renderer_style.dart';
 
 class CoursesItem extends StatelessWidget {
@@ -18,27 +17,21 @@ class CoursesItem extends StatelessWidget {
       onTap: () {
         context.go('/courses/${course.link}');
       },
-      child: StyledCard(
+      child: Card(
+        borderOnForeground: true,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+        elevation: 10,
+        shadowColor: Colors.blue.withOpacity(0.9),
+        color: context.colorScheme.background,
         child: Padding(
-          padding: const EdgeInsets.all(4.0),
+          padding: const EdgeInsets.all(16.0),
           child: AspectRatio(
             aspectRatio: context.isDesktop ? 0.7 : 0.9,
             child: Column(
               children: [
                 AspectRatio(
-                  aspectRatio: 1.5,
-                  child: ClipRRect(
-                    child: Image.asset(AppIcons.me),
-
-                    //  Image.network(
-                    //   course.imageUrl,
-                    //   loadingBuilder: (context, child, loadingProgress) {
-                    //     if (loadingProgress == null) return child;
-                    //     return const Center(child: CircularProgressIndicator());
-                    //   },
-                    //   fit: BoxFit.cover,
-                    // ),
-                  ),
+                  aspectRatio: 1.9,
+                  child: ClipRRect(child: Image.asset(AppIcons.me)),
                 ),
                 Gap(24),
                 SEOText(
