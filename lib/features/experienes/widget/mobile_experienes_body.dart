@@ -5,7 +5,7 @@ import 'package:my_prtofolio/features/experienes/cubit/experinenes_cubit.dart';
 import 'package:my_prtofolio/features/experienes/cubit/experinenes_state.dart';
 import 'package:my_prtofolio/features/experienes/widget/experence_item.dart';
 import 'package:my_prtofolio/helper/extensions.dart';
-import 'package:my_prtofolio/shared/animation/general_animation.dart';
+import 'package:my_prtofolio/features/experienes/animation/animation_experienses.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 
 class MobileExperienesBody extends StatelessWidget {
@@ -42,7 +42,7 @@ class MobileExperienesBody extends StatelessWidget {
                     ),
                 itemBuilder: (context, index) {
                   return Center(
-                    child: GeneralAnimation(experience: experiences[index]),
+                    child: AnimationExperienses(experience: experiences[index]),
                   );
                 },
               ),

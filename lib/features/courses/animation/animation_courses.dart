@@ -1,32 +1,31 @@
+
 import 'package:flutter/material.dart';
-import 'package:my_prtofolio/features/experienes/widget/experence_item.dart';
+import 'package:my_prtofolio/features/courses/widget/courses_item.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 
-class GeneralAnimation extends StatefulWidget {
-  final dynamic experience;
-  final int milliseconds = 900;
+class AnimatedCoursesItem extends StatefulWidget {
+  final dynamic service;
 
-  const GeneralAnimation({super.key, required this.experience});
+  const AnimatedCoursesItem({required this.service});
 
   @override
-  State<GeneralAnimation> createState() => _GeneralAnimationState();
+  State<AnimatedCoursesItem> createState() => _AnimatedCoursesItemState();
 }
 
-class _GeneralAnimationState extends State<GeneralAnimation> {
+class _AnimatedCoursesItemState extends State<AnimatedCoursesItem> {
   bool _isVisible = false;
-  final int milliseconds = 900;
 
   @override
   Widget build(BuildContext context) {
     return VisibilityDetector(
-      key: Key(widget.experience.title['en'] ?? 'default'),
+      key: Key(widget.service.name), // بدل title
       onVisibilityChanged: (info) {
         if (info.visibleFraction > 0.2 && !_isVisible) {
           setState(() => _isVisible = true);
         }
       },
       child: TweenAnimationBuilder(
-        duration: Duration(milliseconds: milliseconds),
+        duration: const Duration(milliseconds: 1500),
         tween: Tween<double>(begin: 0.0, end: _isVisible ? 1.0 : 0.0),
         curve: Curves.easeOutCubic,
         builder: (context, value, child) {
@@ -34,7 +33,7 @@ class _GeneralAnimationState extends State<GeneralAnimation> {
             offset: Offset(0, 30 * (1 - value)),
             child: Opacity(
               opacity: value,
-              child: ExperenceItem(experiences: widget.experience),
+              child: CoursesItem(course: widget.service),
             ),
           );
         },

@@ -1,7 +1,7 @@
 import 'package:dotted_line/dotted_line.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:my_prtofolio/shared/animation/animation_exprienses.dart';
+import 'package:my_prtofolio/features/experienes/animation/animation_exprienses.dart';
 import 'package:my_prtofolio/features/experienes/cubit/experinenes_cubit.dart';
 import 'package:my_prtofolio/features/experienes/cubit/experinenes_state.dart';
 import 'package:my_prtofolio/features/experienes/widget/experence_item.dart';
