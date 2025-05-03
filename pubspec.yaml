@@ -39,7 +39,7 @@ dependencies:
   intl: any
   svg_flutter: ^0.0.1
   gap: ^3.0.1
-  flutter_bloc: ^9.1.0
+  flutter_bloc: ^9.1.1
   shared_preferences: ^2.5.3
   seo_renderer: ^0.6.0
   permission_handler: ^12.0.0+1
@@ -58,6 +58,7 @@ dependencies:
   build_runner: ^2.4.15
   json_serializable: ^6.9.5
   json_annotation: ^4.9.0
+  #  The following adds the Cupertino Icons font to your application.
   url_launcher: ^6.3.1
   flutter_staggered_animations: ^1.1.1
   visibility_detector: ^0.4.0+2

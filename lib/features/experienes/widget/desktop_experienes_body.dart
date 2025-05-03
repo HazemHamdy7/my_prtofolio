@@ -1,10 +1,12 @@
 import 'package:dotted_line/dotted_line.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:my_prtofolio/features/experienes/animation/animation_exprienses.dart';
 import 'package:my_prtofolio/features/experienes/cubit/experinenes_cubit.dart';
 import 'package:my_prtofolio/features/experienes/cubit/experinenes_state.dart';
 import 'package:my_prtofolio/features/experienes/widget/experence_item.dart';
 import 'package:my_prtofolio/helper/extensions.dart';
+import 'package:visibility_detector/visibility_detector.dart';
 
 const expLen = 6;
 const expPointsSize = 16.0;
@@ -66,10 +68,17 @@ class DesktopExperienesBody extends StatelessWidget {
                                         dashColor: context.colorScheme.primary,
                                       ),
                                     ),
-                                    ExperenceItem(experiences: experiences[i]),
+                                    AnimatedexperienseseItem(
+                                      service: experiences[i],
+                                      direction: AnimationDirection.fromLeft,
+                                    ),
                                   ]
                                   : [
-                                    ExperenceItem(experiences: experiences[i]),
+                                    AnimatedexperienseseItem(
+                                      service: experiences[i],
+                                      direction: AnimationDirection.fromLeft,
+                                    ),
+
                                     SizedBox(
                                       width: 100,
                                       child: DottedLine(
@@ -90,7 +99,11 @@ class DesktopExperienesBody extends StatelessWidget {
                           children:
                               isArabic
                                   ? [
-                                    ExperenceItem(experiences: experiences[i]),
+                                    AnimatedexperienseseItem(
+                                      service: experiences[i],
+                                      direction: AnimationDirection.fromRight,
+                                    ),
+
                                     SizedBox(
                                       width: 100,
                                       child: DottedLine(
@@ -105,7 +118,10 @@ class DesktopExperienesBody extends StatelessWidget {
                                         dashColor: context.colorScheme.primary,
                                       ),
                                     ),
-                                    ExperenceItem(experiences: experiences[i]),
+                                    AnimatedexperienseseItem(
+                                      service: experiences[i],
+                                      direction: AnimationDirection.fromRight,
+                                    ),
                                   ],
                         ),
                       ),
@@ -146,3 +162,42 @@ class DesktopExperienesBody extends StatelessWidget {
     );
   }
 }
+
+// class _AnimatedServiceItem extends StatefulWidget {
+//   final dynamic service;
+
+//   const _AnimatedServiceItem({required this.service});
+
+//   @override
+//   State<_AnimatedServiceItem> createState() => _AnimatedServiceItemState();
+// }
+
+// class _AnimatedServiceItemState extends State<_AnimatedServiceItem> {
+//   bool _isVisible = false;
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return VisibilityDetector(
+//       key: Key(widget.service.title['en'] ?? 'default'),
+//       onVisibilityChanged: (info) {
+//         if (info.visibleFraction > 0.2 && !_isVisible) {
+//           setState(() => _isVisible = true);
+//         }
+//       },
+//       child: TweenAnimationBuilder(
+//         duration: const Duration(milliseconds: 1500),
+//         tween: Tween<double>(begin: 0.0, end: _isVisible ? 1.0 : 0.0),
+//         curve: Curves.easeOutCubic,
+//         builder: (context, value, child) {
+//           return Transform.translate(
+//             offset: Offset(0, 30 * (1 - value)),
+//             child: Opacity(
+//               opacity: value,
+//               child: ExperenceItem(experiences: widget.service),
+//             ),
+//           );
+//         },
+//       ),
+//     );
+//   }
+// }

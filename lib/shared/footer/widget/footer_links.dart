@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_prtofolio/constant/app_icon.dart';
-import 'package:my_prtofolio/features/home/presentation/footer/widget/footer_link_item.dart';
+import 'package:my_prtofolio/shared/footer/widget/footer_link_item.dart';
 import 'package:my_prtofolio/helper/url_launcher.dart';
 
 class FooterLinks extends StatelessWidget {

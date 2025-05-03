@@ -18,25 +18,3 @@ class LargeHeroButtons extends StatelessWidget {
     );
   }
 }
-
-class SmallHeroButton extends StatelessWidget {
-  const SmallHeroButton({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        SizedBox(
-          width: double.infinity,
-          child: PrimaryButton(title: context.texts.courses),
-        ),
-        Gap(Insets.xl),
-
-        SizedBox(
-          width: double.infinity,
-          child: OutLineButton(title: context.texts.contact_me),
-        ),
-      ],
-    );
-  }
-}

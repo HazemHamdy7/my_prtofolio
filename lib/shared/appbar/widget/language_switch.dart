@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:my_prtofolio/constant/app_icon.dart';
 import 'package:my_prtofolio/helper/extensions.dart';
-import 'package:my_prtofolio/features/home/presentation/appbar/cubit/toogle_language_cubit.dart';
+import 'package:my_prtofolio/shared/appbar/cubit/toogle_language_cubit.dart';
 import 'package:my_prtofolio/helper/gap.dart';
 import 'package:my_prtofolio/shared/seo_text.dart';
  

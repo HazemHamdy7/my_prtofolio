@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:my_prtofolio/features/home/presentation/appbar/my_app_bar.dart';
-import 'package:my_prtofolio/features/home/presentation/footer/my_footer.dart';
+import 'package:my_prtofolio/shared/appbar/my_app_bar.dart';
+import 'package:my_prtofolio/shared/footer/my_footer.dart';
 import 'package:my_prtofolio/features/home/widget/background_blur.dart';
 import 'package:my_prtofolio/helper/extensions.dart';
 import 'package:my_prtofolio/shared/style/app_size.dart';
