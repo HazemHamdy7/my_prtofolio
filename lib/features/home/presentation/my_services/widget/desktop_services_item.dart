@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
+import 'package:my_prtofolio/features/home/presentation/my_services/animation/animation_services.dart';
 import 'package:my_prtofolio/features/home/presentation/my_services/logic/service_cubit.dart';
 import 'package:my_prtofolio/features/home/presentation/my_services/logic/service_state.dart';
 import 'package:my_prtofolio/features/home/presentation/my_services/widget/custom_card_services.dart';
@@ -43,7 +44,7 @@ class DesktopServicesItem extends StatelessWidget {
                         ),
                         itemBuilder: (context, index) {
                           final service = services[index];
-                          return _AnimatedServiceItem(
+                          return AnimatedServiceItem(
                             key: ValueKey(service.title), // مفتاح فريد
                             service: service,
                           );
@@ -59,55 +60,6 @@ class DesktopServicesItem extends StatelessWidget {
             return const Center(child: Text('Unexpected state'));
           },
         ),
-      ),
-    );
-  }
-}
-
-class _AnimatedServiceItem extends StatefulWidget {
-  final dynamic service;
-
-  const _AnimatedServiceItem({super.key, required this.service});
-
-  @override
-  State<_AnimatedServiceItem> createState() => _AnimatedServiceItemState();
-}
-
-class _AnimatedServiceItemState extends State<_AnimatedServiceItem> {
-  bool _isVisible = false;
-
-  @override
-  Widget build(BuildContext context) {
-    return VisibilityDetector(
-      key: Key(widget.service.title),
-      onVisibilityChanged: (info) {
-        if (info.visibleFraction > 0.2 && !_isVisible) {
-          setState(() => _isVisible = true);
-        }
-      },
-      child: TweenAnimationBuilder(
-        duration: const Duration(milliseconds: 1500),
-        tween: Tween<double>(begin: 0.0, end: _isVisible ? 1.0 : 0.0),
-        curve: Curves.easeOutBack,
-        builder: (context, value, child) {
-          return Transform.scale(
-            scale: value,
-            child: Opacity(
-              opacity: value.clamp(0.0, 1.0),
-              child: Column(
-                children: [
-                  CustomCardServices(
-                    title: widget.service.title,
-                    description: widget.service.description,
-                    imageUrl: widget.service.imageUrl,
-                    buttonTitle: "See More",
-                  ),
-                  const Gap(16),
-                ],
-              ),
-            ),
-          );
-        },
       ),
     );
   }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:my_prtofolio/helper/extensions.dart';
 import 'package:my_prtofolio/shared/seo_text.dart';
+import 'package:my_prtofolio/shared/style/app_colors.dart';
 
 class PrimaryButton extends StatelessWidget {
   const PrimaryButton({
@@ -22,7 +23,7 @@ class PrimaryButton extends StatelessWidget {
         context.go('/courses');
       },
       style: ElevatedButton.styleFrom(
-        backgroundColor: backgroundColor,
+        backgroundColor: AppColors.primaryColor,
         padding: EdgeInsets.symmetric(horizontal: 20),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
       ),

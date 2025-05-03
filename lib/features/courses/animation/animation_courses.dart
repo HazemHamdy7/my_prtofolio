@@ -1,12 +1,11 @@
-
 import 'package:flutter/material.dart';
 import 'package:my_prtofolio/features/courses/widget/courses_item.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 
 class AnimatedCoursesItem extends StatefulWidget {
-  final dynamic service;
+  final dynamic course;
 
-  const AnimatedCoursesItem({required this.service});
+  const AnimatedCoursesItem({super.key, required this.course});
 
   @override
   State<AnimatedCoursesItem> createState() => _AnimatedCoursesItemState();
@@ -18,7 +17,7 @@ class _AnimatedCoursesItemState extends State<AnimatedCoursesItem> {
   @override
   Widget build(BuildContext context) {
     return VisibilityDetector(
-      key: Key(widget.service.name), // بدل title
+      key: Key(widget.course.name), // بدل title
       onVisibilityChanged: (info) {
         if (info.visibleFraction > 0.2 && !_isVisible) {
           setState(() => _isVisible = true);
@@ -33,7 +32,7 @@ class _AnimatedCoursesItemState extends State<AnimatedCoursesItem> {
             offset: Offset(0, 30 * (1 - value)),
             child: Opacity(
               opacity: value,
-              child: CoursesItem(course: widget.service),
+              child: CoursesItem(course: widget.course),
             ),
           );
         },

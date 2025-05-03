@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:my_prtofolio/features/home/presentation/appbar/widget/powered_by_flutter.dart';
+import 'package:my_prtofolio/features/home/widget/small_hero_button.dart';
+import 'package:my_prtofolio/features/home/widget/powered_by_flutter.dart';
 import 'package:my_prtofolio/features/home/widget/hero_buttons.dart';
 import 'package:my_prtofolio/features/home/widget/hero_image.dart';
 import 'package:my_prtofolio/features/home/widget/hero_text.dart';
@@ -14,8 +15,9 @@ class HeroWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      spacing: 10,
       children: [
-        PoweredByFlutter(),
+        const PoweredByFlutter(),
 
         context.isDesktop || context.isTablet
             ? const _LargeHero()

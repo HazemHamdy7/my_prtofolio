@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:my_prtofolio/features/courses/animation/animation_courses.dart';
 import 'package:my_prtofolio/features/courses/logic/cubit/courses_cubit.dart';
 import 'package:my_prtofolio/features/courses/logic/cubit/courses_state.dart';
 import 'package:my_prtofolio/features/courses/widget/courses_item.dart';
@@ -41,7 +42,7 @@ class HomeCoursesListDesktop extends StatelessWidget {
                         ),
                         itemBuilder:
                             (context, index) =>
-                                _AnimatedServiceItem(service: courses[index]),
+                                AnimatedCoursesItem(course: courses[index]),
                       ),
                     ),
                   ],
@@ -59,41 +60,41 @@ class HomeCoursesListDesktop extends StatelessWidget {
   }
 }
 
-class _AnimatedServiceItem extends StatefulWidget {
-  final dynamic service;
+// class _AnimatedCoursesItem extends StatefulWidget {
+//   final dynamic service;
 
-  const _AnimatedServiceItem({required this.service});
+//   const _AnimatedCoursesItem({required this.service});
 
-  @override
-  State<_AnimatedServiceItem> createState() => _AnimatedServiceItemState();
-}
+//   @override
+//   State<_AnimatedCoursesItem> createState() => _AnimatedCoursesItemState();
+// }
 
-class _AnimatedServiceItemState extends State<_AnimatedServiceItem> {
-  bool _isVisible = false;
+// class _AnimatedCoursesItemState extends State<_AnimatedCoursesItem> {
+//   bool _isVisible = false;
 
-  @override
-  Widget build(BuildContext context) {
-    return VisibilityDetector(
-      key: Key(widget.service.name), // بدل title
-      onVisibilityChanged: (info) {
-        if (info.visibleFraction > 0.2 && !_isVisible) {
-          setState(() => _isVisible = true);
-        }
-      },
-      child: TweenAnimationBuilder(
-        duration: const Duration(milliseconds: 3000),
-        tween: Tween<double>(begin: 0.0, end: _isVisible ? 1.0 : 0.0),
-        curve: Curves.easeOutCubic,
-        builder: (context, value, child) {
-          return Transform.translate(
-            offset: Offset(0, 30 * (1 - value)),
-            child: Opacity(
-              opacity: value,
-              child: CoursesItem(course: widget.service),
-            ),
-          );
-        },
-      ),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return VisibilityDetector(
+//       key: Key(widget.service.name), // بدل title
+//       onVisibilityChanged: (info) {
+//         if (info.visibleFraction > 0.2 && !_isVisible) {
+//           setState(() => _isVisible = true);
+//         }
+//       },
+//       child: TweenAnimationBuilder(
+//         duration: const Duration(milliseconds: 3000),
+//         tween: Tween<double>(begin: 0.0, end: _isVisible ? 1.0 : 0.0),
+//         curve: Curves.easeOutCubic,
+//         builder: (context, value, child) {
+//           return Transform.translate(
+//             offset: Offset(0, 30 * (1 - value)),
+//             child: Opacity(
+//               opacity: value,
+//               child: CoursesItem(course: widget.service),
+//             ),
+//           );
+//         },
+//       ),
+//     );
+//   }
+// }

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:my_prtofolio/features/courses/animation/animation_courses.dart';
 import 'package:my_prtofolio/features/courses/logic/cubit/courses_cubit.dart';
 import 'package:my_prtofolio/features/courses/logic/cubit/courses_state.dart';
-import 'package:my_prtofolio/features/courses/widget/courses_item.dart';
-import 'package:my_prtofolio/features/home/presentation/appbar/widget/app_scafflod.dart';
+import 'package:my_prtofolio/shared/appbar/widget/app_scafflod.dart';
 import 'package:my_prtofolio/helper/extensions.dart';
 
-class CoursesPage extends StatelessWidget {
-  const CoursesPage({super.key});
+class MobileExperiencesPage extends StatelessWidget {
+  const MobileExperiencesPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,30 +17,33 @@ class CoursesPage extends StatelessWidget {
         slivers: [
           BlocBuilder<CoursesCubit, CoursesState>(
             builder: (context, state) {
-              if (state is CoursesInitial) {
-                return const SliverToBoxAdapter(
-                  child: Center(child: Text('Initializing...')),
-                );
-              } else if (state is CoursesLoading) {
+              if (state is CoursesLoading) {
                 return const SliverToBoxAdapter(
                   child: Center(child: CircularProgressIndicator()),
                 );
               } else if (state is CoursesLoaded) {
-                final courses = (state).courses;
                 return SliverPadding(
-                  padding: EdgeInsets.all(context.insets.padding),
-                  sliver: SliverGrid.builder(
+                  padding:
+                      context.isDesktop || context.isTablet
+                          ? EdgeInsets.all(context.insets.padding)
+                          : EdgeInsets.symmetric(
+                            horizontal: 16,
+                            vertical: context.insets.gap,
+                          ),
+
+                  sliver: SliverList.separated(
                     itemCount: state.courses.length,
-                    gridDelegate:
-                        const SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 3,
-                          crossAxisSpacing: 24,
-                          mainAxisSpacing: 24,
-                          childAspectRatio: 0.8,
+                    separatorBuilder: (_, __) => const SizedBox(height: 24),
+                    itemBuilder: (context, index) {
+                      return Center(
+                        child: ConstrainedBox(
+                          constraints: const BoxConstraints(maxWidth: 350),
+                          child: AnimatedCoursesItem(
+                            course: state.courses[index],
+                          ),
                         ),
-                    itemBuilder:
-                        (context, index) =>
-                            CoursesItem(course: state.courses[index]),
+                      );
+                    },
                   ),
                 );
               } else if (state is CoursesError) {

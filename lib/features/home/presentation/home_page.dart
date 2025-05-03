@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:my_prtofolio/features/home/presentation/appbar/widget/app_scafflod.dart';
+import 'package:my_prtofolio/shared/appbar/widget/app_scafflod.dart';
 import 'package:my_prtofolio/features/courses/widget/home_courses_list.dart';
 import 'package:my_prtofolio/features/courses/widget/home_title_subtitle.dart';
 import 'package:my_prtofolio/features/experienes/presentation/experienes_body.dart';

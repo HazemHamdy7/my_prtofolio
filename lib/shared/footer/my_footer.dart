@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:my_prtofolio/features/home/presentation/appbar/widget/powered_by_flutter.dart';
-import 'package:my_prtofolio/features/home/presentation/footer/widget/desktop_footer.dart';
-import 'package:my_prtofolio/features/home/presentation/footer/widget/mobile_footer.dart';
+import 'package:my_prtofolio/features/home/widget/powered_by_flutter.dart';
+import 'package:my_prtofolio/shared/footer/widget/desktop_footer.dart';
+import 'package:my_prtofolio/shared/footer/widget/mobile_footer.dart';
 import 'package:my_prtofolio/helper/extensions.dart';
 
 class MyFooter extends StatelessWidget {

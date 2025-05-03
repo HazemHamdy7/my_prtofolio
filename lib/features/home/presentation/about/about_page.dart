@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:my_prtofolio/features/home/presentation/appbar/widget/app_scafflod.dart';
+import 'package:my_prtofolio/shared/appbar/widget/app_scafflod.dart';
 import 'package:my_prtofolio/helper/extensions.dart';
 import 'package:my_prtofolio/helper/font_size_responsive.dart';
 import 'package:my_prtofolio/shared/seo_text.dart';
