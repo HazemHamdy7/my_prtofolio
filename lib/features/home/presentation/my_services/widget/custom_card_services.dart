@@ -1,28 +1,32 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:my_prtofolio/constants/assets.dart';
+import 'package:my_prtofolio/features/home/presentation/my_services/model/service_model.dart';
 import 'package:my_prtofolio/helper/extensions.dart';
+import 'package:my_prtofolio/helper/font_size_responsive.dart';
 import 'package:my_prtofolio/shared/seo_text.dart';
 import 'package:my_prtofolio/shared/style/app_colors.dart';
 
 class CustomCardServices extends StatelessWidget {
-  final String title;
-  final String description;
-  final String imageUrl;
   final String buttonTitle;
+  final ServiceModel serviceModel;
+
   const CustomCardServices({
     super.key,
-    required this.title,
-    required this.description,
-    required this.imageUrl,
+    required this.serviceModel,
     this.buttonTitle = "See More",
   });
 
   @override
   Widget build(BuildContext context) {
+    List<String> images = [
+      Assets.imagesCode2,
+      Assets.imagesCode,
+      Assets.imagesComputer,
+    ];
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(30),
-        // color: context.colorScheme.background,
         border: Border.all(color: context.colorScheme.outline),
       ),
       child: Card(
@@ -31,41 +35,67 @@ class CustomCardServices extends StatelessWidget {
         elevation: 20,
         shadowColor: Colors.blue.withOpacity(0.9),
         color: context.colorScheme.background,
-
         child: Padding(
           padding: EdgeInsets.all(16),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(
-                width: 40,
-                height: 40,
-
-                child: Image.asset(
-                  imageUrl,
-                  fit: BoxFit.cover,
-                  color: AppColors.primaryColor,
+                width: 50,
+                height: 50, // الحجم المناسب للعرض
+                child: PageView.builder(
+                  itemCount: images.length,
+                  itemBuilder: (context, index) {
+                    return Card(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      elevation: 10,
+                      shadowColor: Colors.blue.withOpacity(0.5),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Image.asset(
+                          images[index], // استخدام الصورة بناءً على التكرار
+                          width: double.infinity,
+                          height: 100, // تعديل الحجم حسب ما يناسبك
+                          fit: BoxFit.contain,
+                        ),
+                      ),
+                    );
+                  },
                 ),
               ),
-              Gap(16),
 
-              SEOText(
-                title,
-                style: context.textStyle.bodyleLgBold.copyWith(
-                  color: context.colorScheme.onBackground,
-                ),
-              ),
               Gap(10),
-
               SEOText(
-                description,
-                maxLines: 4,
-                style: context.textStyle.bodyMdMedium.copyWith(
+                serviceModel.title[Localizations.localeOf(
+                      context,
+                    ).languageCode] ??
+                    serviceModel.title['en'] ??
+                    '',
+                style: TextStyle(
+                  fontSize: getResponsiveFontSize(context, fontSize: 20),
+                  fontWeight: FontWeight.w600,
                   color: context.colorScheme.onBackground,
                 ),
               ),
-              Gap(16),
 
+              Gap(10),
+              SEOText(
+                serviceModel.description[Localizations.localeOf(
+                      context,
+                    ).languageCode] ??
+                    serviceModel.description['en'] ??
+                    '', // التأكد من الوصول بشكل صحيح للمفتاح 'en'
+                maxLines: 4,
+                style: TextStyle(
+                  fontSize: getResponsiveFontSize(context, fontSize: 10),
+                  fontWeight: FontWeight.w600,
+                  color: context.colorScheme.onBackground,
+                ),
+              ),
+
+              Gap(16),
               _CustomButtonCard(onPressed: () {}, buttonTitle: buttonTitle),
             ],
           ),

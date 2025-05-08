@@ -2,6 +2,7 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:my_prtofolio/helper/extensions.dart';
+import 'package:my_prtofolio/shared/style/app_colors.dart';
 import 'package:my_prtofolio/shared/style/app_size.dart';
 import 'package:my_prtofolio/shared/seo_text.dart';
 import 'package:seo_renderer/renderers/text_renderer/text_renderer_style.dart';
@@ -10,8 +11,7 @@ class HeroText extends StatelessWidget {
   List<MaterialColor> colorizeColors = [
     Colors.purple,
     Colors.blue,
-    Colors.yellow,
-    Colors.red,
+    Colors.purple,
   ];
 
   HeroText({super.key});

@@ -12,7 +12,7 @@ class LargeHeroButtons extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      spacing: 50,
+      spacing: 30,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Row(
