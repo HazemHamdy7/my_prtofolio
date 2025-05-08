@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_prtofolio/features/experienes/widget/experence_item.dart';
+import 'package:my_prtofolio/features/home/presentation/experienes/widget/experence_item.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 
 class AnimationExperienses extends StatefulWidget {

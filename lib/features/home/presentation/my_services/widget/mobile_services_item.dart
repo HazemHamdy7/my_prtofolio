@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
+import 'package:my_prtofolio/constants/assets.dart';
 import 'package:my_prtofolio/features/home/presentation/my_services/logic/service_cubit.dart';
 import 'package:my_prtofolio/features/home/presentation/my_services/widget/custom_card_services.dart';
 import 'package:my_prtofolio/helper/extensions.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 
 import '../logic/service_state.dart';
+import '../model/service_model.dart';
 
 class ServicesItemMobile extends StatelessWidget {
   const ServicesItemMobile({super.key});
@@ -18,12 +20,12 @@ class ServicesItemMobile extends StatelessWidget {
       child: BlocBuilder<ServicesCubit, ServicesState>(
         builder: (context, state) {
           switch (state.runtimeType) {
-            case const (Loading):
+            case Loading:
               return const Center(child: CircularProgressIndicator());
-            case const (Failure):
+            case Failure:
               final failureState = state as Failure;
               return Center(child: Text(failureState.message));
-            case const (Success):
+            case Success:
               final successState = state as Success;
               return Center(
                 child: ConstrainedBox(
@@ -37,6 +39,7 @@ class ServicesItemMobile extends StatelessWidget {
                           context,
                         ).copyWith(scrollbars: false),
                         child: CustomScrollView(
+                          physics: const BouncingScrollPhysics(),
                           slivers: [
                             SliverPadding(
                               padding: const EdgeInsets.symmetric(
@@ -45,9 +48,10 @@ class ServicesItemMobile extends StatelessWidget {
                               sliver: SliverList.builder(
                                 itemCount: successState.services.length,
                                 itemBuilder: (context, index) {
-                                  final service = successState.services[index];
+                                  final ServiceModel service =
+                                      successState.services[index];
                                   return _AnimatedServiceItem(
-                                    key: ValueKey('service_$index'),
+                                    key: ValueKey('service_${service.title}'),
                                     service: service,
                                   );
                                 },
@@ -71,10 +75,15 @@ class ServicesItemMobile extends StatelessWidget {
 }
 
 class _AnimatedServiceItem extends StatefulWidget {
+  final List<String> servicImages = [
+    Assets.imagesCode,
+    Assets.imagesCode2,
+    Assets.imagesComputer,
+  ];
+
   final dynamic service;
 
-  const _AnimatedServiceItem({Key? key, required this.service})
-    : super(key: key);
+  _AnimatedServiceItem({Key? key, required this.service}) : super(key: key);
 
   @override
   State<_AnimatedServiceItem> createState() => _AnimatedServiceItemState();
@@ -86,7 +95,7 @@ class _AnimatedServiceItemState extends State<_AnimatedServiceItem> {
   @override
   Widget build(BuildContext context) {
     return VisibilityDetector(
-      key: Key(widget.service.title),
+      key: Key(widget.service.title['en'] ?? 'default'),
       onVisibilityChanged: (info) {
         if (info.visibleFraction > 0.2 && !_isVisible) {
           setState(() => _isVisible = true);
@@ -104,9 +113,8 @@ class _AnimatedServiceItemState extends State<_AnimatedServiceItem> {
               child: Column(
                 children: [
                   CustomCardServices(
-                    title: widget.service.title,
-                    description: widget.service.description,
-                    imageUrl: widget.service.imageUrl,
+                    serviceModel:
+                        widget.service, // هنا نمرر الـ serviceModel كاملاً
                     buttonTitle: "See More",
                   ),
                   const Gap(16),

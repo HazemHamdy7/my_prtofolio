@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:my_prtofolio/features/courses/logic/cubit/courses_state.dart';
-import 'package:my_prtofolio/features/courses/model/course.dart';
+import 'package:my_prtofolio/features/home/presentation/courses/logic/cubit/courses_state.dart';
+import 'package:my_prtofolio/features/home/presentation/courses/model/course.dart';
 
 class CoursesCubit extends Cubit<CoursesState> {
   CoursesCubit() : super(CoursesInitial());

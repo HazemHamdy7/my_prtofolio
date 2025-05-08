@@ -1,11 +1,11 @@
-
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:my_prtofolio/features/home/presentation/my_services/model/service_model.dart';
 import 'package:my_prtofolio/features/home/presentation/my_services/widget/custom_card_services.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 
 class AnimatedServiceItem extends StatefulWidget {
-  final dynamic service;
+  final ServiceModel service;
 
   const AnimatedServiceItem({super.key, required this.service});
 
@@ -19,7 +19,7 @@ class _AnimatedServiceItemState extends State<AnimatedServiceItem> {
   @override
   Widget build(BuildContext context) {
     return VisibilityDetector(
-      key: Key(widget.service.title),
+      key: Key(widget.service.title['en'] ?? 'default'),
       onVisibilityChanged: (info) {
         if (info.visibleFraction > 0.2 && !_isVisible) {
           setState(() => _isVisible = true);
@@ -37,9 +37,8 @@ class _AnimatedServiceItemState extends State<AnimatedServiceItem> {
               child: Column(
                 children: [
                   CustomCardServices(
-                    title: widget.service.title,
-                    description: widget.service.description,
-                    imageUrl: widget.service.imageUrl,
+                    
+                    serviceModel: widget.service,
                     buttonTitle: "See More",
                   ),
                   const Gap(16),

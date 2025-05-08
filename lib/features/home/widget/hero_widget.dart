@@ -60,7 +60,7 @@ class _LargeHero extends StatelessWidget {
           flex: 2,
           child: Column(
             children: [
-              const HeroText(),
+                HeroText(),
               Gap(Insets.xxl),
               const LargeHeroButtons(),
             ],

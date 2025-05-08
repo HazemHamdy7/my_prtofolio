@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:my_prtofolio/features/courses/animation/animation_courses.dart';
-import 'package:my_prtofolio/features/courses/logic/cubit/courses_cubit.dart';
-import 'package:my_prtofolio/features/courses/logic/cubit/courses_state.dart';
-import 'package:my_prtofolio/features/courses/widget/courses_item.dart';
+import 'package:my_prtofolio/features/home/presentation/courses/animation/animation_courses.dart';
+import 'package:my_prtofolio/features/home/presentation/courses/logic/cubit/courses_cubit.dart';
+import 'package:my_prtofolio/features/home/presentation/courses/logic/cubit/courses_state.dart';
 import 'package:my_prtofolio/helper/extensions.dart';
-import 'package:visibility_detector/visibility_detector.dart';
 
 class HomeCoursesListDesktop extends StatelessWidget {
   const HomeCoursesListDesktop({super.key});

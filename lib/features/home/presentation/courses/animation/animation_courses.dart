@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_prtofolio/features/courses/widget/courses_item.dart';
+import 'package:my_prtofolio/features/home/presentation/courses/widget/courses_item.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 
 class AnimatedCoursesItem extends StatefulWidget {
