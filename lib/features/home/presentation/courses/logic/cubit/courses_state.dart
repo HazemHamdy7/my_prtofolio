@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:my_prtofolio/features/courses/model/course.dart';
+import 'package:my_prtofolio/features/home/presentation/courses/model/course.dart';
 
 part 'courses_state.freezed.dart';
 

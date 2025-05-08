@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:my_prtofolio/features/experienes/cubit/experinenes_state.dart';
-import 'package:my_prtofolio/features/experienes/model/experiences.dart';
+import 'package:my_prtofolio/features/home/presentation/experienes/cubit/experinenes_state.dart';
+import 'package:my_prtofolio/features/home/presentation/experienes/model/experiences.dart';
 
 class ExperinenesCubit extends Cubit<ExperinenesState> {
   ExperinenesCubit() : super(const ExperinenesState.initial());

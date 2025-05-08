@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:my_prtofolio/features/experienes/model/experiences.dart';
-import 'package:my_prtofolio/features/experienes/widget/experince_description_item.dart';
+import 'package:my_prtofolio/features/home/presentation/experienes/model/experiences.dart';
+import 'package:my_prtofolio/features/home/presentation/experienes/widget/experince_description_item.dart';
 import 'package:my_prtofolio/helper/extensions.dart';
 import 'package:my_prtofolio/shared/styled_card.dart';
 

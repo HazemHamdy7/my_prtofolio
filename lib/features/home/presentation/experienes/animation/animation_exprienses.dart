@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:visibility_detector/visibility_detector.dart';
-import 'package:my_prtofolio/features/experienes/model/experiences.dart';
-import 'package:my_prtofolio/features/experienes/widget/experence_item.dart';
+import 'package:my_prtofolio/features/home/presentation/experienes/model/experiences.dart';
+import 'package:my_prtofolio/features/home/presentation/experienes/widget/experence_item.dart';
 
 enum AnimationDirection { fromRight, fromLeft, fromBottom, fromTop }
 
