@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:my_prtofolio/features/courses/widget/home_title_subtitle.dart';
- import 'package:my_prtofolio/features/experienes/widget/desktop_experienes_body.dart';
-import 'package:my_prtofolio/features/experienes/widget/mobile_experienes_body.dart';
+import 'package:my_prtofolio/features/home/presentation/courses/widget/home_title_subtitle.dart';
+import 'package:my_prtofolio/features/home/presentation/experienes/widget/desktop_experienes_body.dart';
+import 'package:my_prtofolio/features/home/presentation/experienes/widget/mobile_experienes_body.dart';
 import 'package:my_prtofolio/helper/extensions.dart';
 
 class ExperienesBody extends StatelessWidget {

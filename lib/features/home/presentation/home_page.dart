@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:my_prtofolio/shared/appbar/widget/app_scafflod.dart';
-import 'package:my_prtofolio/features/courses/widget/home_courses_list.dart';
-import 'package:my_prtofolio/features/courses/widget/home_title_subtitle.dart';
-import 'package:my_prtofolio/features/experienes/presentation/experienes_body.dart';
+import 'package:my_prtofolio/features/home/presentation/courses/widget/home_courses_list.dart';
+import 'package:my_prtofolio/features/home/presentation/courses/widget/home_title_subtitle.dart';
+import 'package:my_prtofolio/features/home/presentation/experienes/presentation/experienes_body.dart';
 import 'package:my_prtofolio/features/home/presentation/my_services/presentation/services_page.dart';
 import 'package:my_prtofolio/features/home/widget/hero_widget.dart';
 import 'package:my_prtofolio/features/testimonil/testimonil_list.dart';

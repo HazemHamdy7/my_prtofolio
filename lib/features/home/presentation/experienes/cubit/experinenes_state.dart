@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:my_prtofolio/features/experienes/model/experiences.dart';
+import 'package:my_prtofolio/features/home/presentation/experienes/model/experiences.dart';
 
 part 'experinenes_state.freezed.dart';
 

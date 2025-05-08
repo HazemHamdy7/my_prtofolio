@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_prtofolio/features/courses/widget/home_title_subtitle.dart';
+import 'package:my_prtofolio/features/home/presentation/courses/widget/home_title_subtitle.dart';
 import 'package:my_prtofolio/features/home/presentation/my_services/widget/desktop_services_item.dart';
 import 'package:my_prtofolio/features/home/presentation/my_services/widget/mobile_services_item.dart';
 import 'package:my_prtofolio/helper/extensions.dart';
