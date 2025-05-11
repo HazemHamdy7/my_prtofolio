@@ -75,7 +75,7 @@ class _BorderShadow extends StatelessWidget {
         borderRadius: BorderRadius.all(Radius.circular(24)),
         boxShadow: [
           BoxShadow(
-            color: context.colorScheme.primary.withOpacity(0.5),
+            color: context.colorScheme.primary.withValues(alpha: 0.5),
             blurRadius: 10,
             spreadRadius: 3,
           ),

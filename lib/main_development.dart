@@ -10,7 +10,7 @@ import 'package:my_prtofolio/shared/routes/app_route.dart';
 import 'package:my_prtofolio/shared/style/app_theme.dart';
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized(); // تهيئة الـ bindings
+  WidgetsFlutterBinding.ensureInitialized(); 
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(const MyApp());
 }

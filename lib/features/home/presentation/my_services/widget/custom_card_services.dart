@@ -33,8 +33,8 @@ class CustomCardServices extends StatelessWidget {
         borderOnForeground: true,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
         elevation: 20,
-        shadowColor: Colors.blue.withOpacity(0.9),
-        color: context.colorScheme.background,
+        shadowColor: Colors.blue.withValues(alpha: 0.9),
+        color: context.colorScheme.onSurface,
         child: Padding(
           padding: EdgeInsets.all(16),
           child: Column(
@@ -51,7 +51,7 @@ class CustomCardServices extends StatelessWidget {
                         borderRadius: BorderRadius.circular(10),
                       ),
                       elevation: 10,
-                      shadowColor: Colors.blue.withOpacity(0.5),
+                      shadowColor: Colors.blue.withValues(alpha: 0.5),
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Image.asset(
@@ -76,7 +76,7 @@ class CustomCardServices extends StatelessWidget {
                 style: TextStyle(
                   fontSize: getResponsiveFontSize(context, fontSize: 20),
                   fontWeight: FontWeight.w600,
-                  color: context.colorScheme.onBackground,
+                  color: context.colorScheme.onSurface,
                 ),
               ),
 
@@ -91,7 +91,7 @@ class CustomCardServices extends StatelessWidget {
                 style: TextStyle(
                   fontSize: getResponsiveFontSize(context, fontSize: 10),
                   fontWeight: FontWeight.w600,
-                  color: context.colorScheme.onBackground,
+                  color: context.colorScheme.onSurface,
                 ),
               ),
 
@@ -122,7 +122,7 @@ class _CustomButtonCard extends StatelessWidget {
           BoxShadow(
             color: AppColors.primaryColor,
 
-            // color: Colors.teal.withOpacity(0.2),
+            // color: Colors.teal.withValues(alpha: 0.2),
             spreadRadius: 2,
             blurRadius: 1,
             offset: Offset(0, 1),
@@ -130,7 +130,7 @@ class _CustomButtonCard extends StatelessWidget {
           BoxShadow(
             color: AppColors.primaryColor,
 
-            // color: const Color.fromARGB(255, 6, 226, 179).withOpacity(0.3),
+            // color: const Color.fromARGB(255, 6, 226, 179).withValues(alpha: 0.3),
             spreadRadius: 3,
             blurRadius: 7,
             offset: Offset(0, 0),

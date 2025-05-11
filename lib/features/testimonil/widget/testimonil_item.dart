@@ -28,7 +28,7 @@ class TestimonilItem extends StatelessWidget {
                 child: Text(
                   'Testimonil Title',
                   style: context.textStyle.bodyleLgBold.copyWith(
-                    color: context.colorScheme.onBackground,
+                    color: context.colorScheme.onSurface,
                   ),
                 ),
               ),
@@ -39,7 +39,7 @@ class TestimonilItem extends StatelessWidget {
           Text(
             'Testimonil Description   Testimonil Description Testimonil Description Testimonil Description  ',
             style: context.textStyle.bodyMdMedium.copyWith(
-              color: context.colorScheme.onBackground,
+              color: context.colorScheme.onSurface,
             ),
           ),
         ],

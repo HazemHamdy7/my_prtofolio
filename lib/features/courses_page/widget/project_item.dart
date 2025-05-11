@@ -18,8 +18,8 @@ class ProjectItem extends StatelessWidget {
       child: Card(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
         elevation: 10,
-        shadowColor: Colors.blue.withOpacity(0.9),
-        color: context.colorScheme.background,
+        shadowColor: Colors.blue.withValues(alpha: 0.9),
+        color: context.colorScheme.onSurface,
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: SingleChildScrollView(
@@ -39,7 +39,7 @@ class ProjectItem extends StatelessWidget {
                 SEOText(
                   project.name,
                   style: context.textStyle.bodyleLgBold.copyWith(
-                    color: context.colorScheme.onBackground,
+                    color: context.colorScheme.onSurface,
                   ),
                   textRenderStyle: TextRendererStyle.header4,
                 ),

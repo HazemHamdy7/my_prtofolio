@@ -38,7 +38,7 @@ class _DrawerMenuState extends State<DrawerMenu>
             color: context.colorScheme.surface,
             boxShadow: [
               BoxShadow(
-                color: context.colorScheme.surface.withOpacity(0.1),
+                color: context.colorScheme.surface.withValues(alpha: 0.1),
                 blurRadius: 6,
                 spreadRadius: 3,
               ),

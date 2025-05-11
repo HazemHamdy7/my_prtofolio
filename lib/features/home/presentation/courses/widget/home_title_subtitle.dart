@@ -22,7 +22,7 @@ class HomeTitleSubtitle extends StatelessWidget {
           SEOText(
             title,
             style: context.textStyle.titleSimeBold.copyWith(
-              color: context.colorScheme.onBackground,
+              color: context.colorScheme.onSurface,
             ),
             textRenderStyle: TextRendererStyle.header3,
           ),
@@ -30,7 +30,7 @@ class HomeTitleSubtitle extends StatelessWidget {
           SEOText(
             subtitle,
             style: context.textStyle.bodyMdMedium.copyWith(
-              color: context.colorScheme.onBackground,
+              color: context.colorScheme.onSurface,
             ),
             textRenderStyle: TextRendererStyle.header4,
           ),

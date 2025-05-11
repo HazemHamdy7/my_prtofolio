@@ -21,7 +21,7 @@ boxShadow: [
             BoxShadow(
            blurRadius: 200,
            spreadRadius: 100,
-           color: context.colorScheme.primary.withOpacity(0.4),
+           color: context.colorScheme.primary.withValues(alpha: 0.4),
             ),
           ],         
         ),

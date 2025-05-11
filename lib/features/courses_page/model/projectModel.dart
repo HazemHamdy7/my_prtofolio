@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:my_prtofolio/constant/app_icon.dart';
 import 'package:my_prtofolio/constants/assets.dart';
 

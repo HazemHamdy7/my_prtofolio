@@ -31,8 +31,7 @@ class _AnimatedexperienseseItemState extends State<AnimatedexperienseseItem> {
       case AnimationDirection.fromTop:
         return Offset(0, -30 * (1 - value));
       case AnimationDirection.fromBottom:
-      default:
-        return Offset(0, 30 * (1 - value));
+      return Offset(0, 30 * (1 - value));
     }
   }
 

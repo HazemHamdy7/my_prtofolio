@@ -1,9 +1,8 @@
 import 'package:go_router/go_router.dart';
 import 'package:my_prtofolio/features/courses_page/presentation/courses_page.dart';
 import 'package:my_prtofolio/features/about/about_page.dart';
-import 'package:my_prtofolio/features/presentation/blog_page.dart';
-import 'package:my_prtofolio/features/courses_page/widget/desktop_courses_page.dart';
-import 'package:my_prtofolio/features/home/presentation/home_page.dart';
+import 'package:my_prtofolio/features/blog/presentation/blog_page.dart';
+ import 'package:my_prtofolio/features/home/presentation/home_page.dart';
 
 class Routes {
   static const String home = '/';

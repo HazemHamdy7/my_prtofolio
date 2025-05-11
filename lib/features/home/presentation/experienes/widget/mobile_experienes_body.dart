@@ -3,10 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:my_prtofolio/features/home/presentation/experienes/cubit/experinenes_cubit.dart';
 import 'package:my_prtofolio/features/home/presentation/experienes/cubit/experinenes_state.dart';
-import 'package:my_prtofolio/features/home/presentation/experienes/widget/experence_item.dart';
 import 'package:my_prtofolio/helper/extensions.dart';
 import 'package:my_prtofolio/features/home/presentation/experienes/animation/animation_experienses.dart';
-import 'package:visibility_detector/visibility_detector.dart';
 
 class MobileExperienesBody extends StatelessWidget {
   const MobileExperienesBody({super.key});

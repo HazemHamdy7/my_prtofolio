@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:my_prtofolio/helper/extensions.dart';
+ import 'package:my_prtofolio/helper/extensions.dart';
 import 'package:my_prtofolio/shared/seo_text.dart';
 import 'package:my_prtofolio/shared/style/app_colors.dart';
 

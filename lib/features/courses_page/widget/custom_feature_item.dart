@@ -25,13 +25,13 @@ class CustomFeatureItem extends StatelessWidget {
         );
       case 'bloc':
         return const FaIcon(
-          FontAwesomeIcons.cogs,
+          FontAwesomeIcons.gears,
           size: 14,
           color: Colors.white,
         );
       case 'provider':
         return const FaIcon(
-          FontAwesomeIcons.projectDiagram,
+          FontAwesomeIcons.diagramProject,
           size: 14,
           color: Colors.white,
         );

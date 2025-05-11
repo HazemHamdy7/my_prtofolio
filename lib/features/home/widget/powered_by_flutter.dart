@@ -24,7 +24,7 @@ class PoweredByFlutter extends StatelessWidget {
           Text(
             context.texts.powred_by_flutter,
             style: context.textStyle.bodyMdMedium.copyWith(
-              color: context.colorScheme.onBackground,
+              color: context.colorScheme.onSurface,
             ),
           ),
         ],

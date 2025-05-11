@@ -1,4 +1,4 @@
- import 'package:flutter/foundation.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:dio/dio.dart';
 import 'package:my_prtofolio/features/home/widget/style_button.dart';
@@ -21,12 +21,12 @@ class DownloadCVButton extends StatefulWidget {
 }
 
 class _DownloadCVButtonState extends State<DownloadCVButton> {
-  bool _isDownloading = false; // لتتبع حالة التحميل
+  bool _isDownloading = false;
 
   Future<void> _downloadFile(BuildContext context) async {
     try {
       setState(() {
-        _isDownloading = true;  
+        _isDownloading = true;
       });
 
       if (kIsWeb) {
@@ -51,7 +51,7 @@ class _DownloadCVButtonState extends State<DownloadCVButton> {
       ).showSnackBar(SnackBar(content: Text("حدث خطأ أثناء التحميل: $e")));
     } finally {
       setState(() {
-        _isDownloading = false; // تم الانتهاء من التحميل
+        _isDownloading = false;    
       });
     }
   }
@@ -62,11 +62,11 @@ class _DownloadCVButtonState extends State<DownloadCVButton> {
       title:
           _isDownloading
               ? "تحميل..."
-              : "Download CV", // تغيير النص أثناء التحميل
+              : "Download CV",  
       onPressed:
           _isDownloading
               ? null
-              : () => _downloadFile(context), // تعطيل الزر أثناء التحميل
+              : () => _downloadFile(context),
       backgroundColor: AppColors.primaryColor, // Teal
     );
   }

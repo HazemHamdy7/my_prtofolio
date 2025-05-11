@@ -28,7 +28,7 @@ class LargeAppBarMenuItem extends StatelessWidget {
           style: SmallTextStyles().bodyLgMedium.copyWith(
             color:
                 isSelected
-                    ? context.colorScheme.onBackground
+                    ? context.colorScheme.onSurface
                     : context.colorScheme.onSurfaceVariant,
             fontWeight: isSelected ? FontWeight.w600 : FontWeight.w400,
           ),

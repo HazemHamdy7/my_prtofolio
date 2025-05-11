@@ -20,12 +20,12 @@ class ServicesItemMobile extends StatelessWidget {
       child: BlocBuilder<ServicesCubit, ServicesState>(
         builder: (context, state) {
           switch (state.runtimeType) {
-            case Loading:
+            case const (Loading):
               return const Center(child: CircularProgressIndicator());
-            case Failure:
+            case const (Failure):
               final failureState = state as Failure;
               return Center(child: Text(failureState.message));
-            case Success:
+            case const (Success):
               final successState = state as Success;
               return Center(
                 child: ConstrainedBox(
@@ -83,7 +83,7 @@ class _AnimatedServiceItem extends StatefulWidget {
 
   final dynamic service;
 
-  _AnimatedServiceItem({Key? key, required this.service}) : super(key: key);
+  _AnimatedServiceItem({super.key, required this.service});
 
   @override
   State<_AnimatedServiceItem> createState() => _AnimatedServiceItemState();

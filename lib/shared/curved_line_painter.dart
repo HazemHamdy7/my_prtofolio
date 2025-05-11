@@ -11,7 +11,7 @@ class CurvedLinePainter extends CustomPainter {
     final topLeftPaint =
         Paint()
           ..shader = LinearGradient(
-            colors: [color.withOpacity(0), color.withOpacity(0.5)],
+            colors: [color.withValues(alpha: 0), color.withValues(alpha: 0.5)],
             begin: Alignment.topRight,
             end: Alignment.bottomLeft,
           ).createShader(const Rect.fromLTWH(0, 0, lineSize, lineSize))
@@ -22,7 +22,7 @@ class CurvedLinePainter extends CustomPainter {
     final bottomRightPaint =
         Paint()
           ..shader = LinearGradient(
-            colors: [color.withOpacity(0), color.withOpacity(0.5)],
+            colors: [color.withValues(alpha: 0), color.withValues(alpha: 0.5)],
             begin: Alignment.bottomLeft,
             end: Alignment.topRight,
           ).createShader(

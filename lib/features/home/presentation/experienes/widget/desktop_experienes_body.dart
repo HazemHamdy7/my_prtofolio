@@ -4,9 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:my_prtofolio/features/home/presentation/experienes/animation/animation_exprienses.dart';
 import 'package:my_prtofolio/features/home/presentation/experienes/cubit/experinenes_cubit.dart';
 import 'package:my_prtofolio/features/home/presentation/experienes/cubit/experinenes_state.dart';
-import 'package:my_prtofolio/features/home/presentation/experienes/widget/experence_item.dart';
 import 'package:my_prtofolio/helper/extensions.dart';
-import 'package:visibility_detector/visibility_detector.dart';
 
 const expLen = 6;
 const expPointsSize = 16.0;
@@ -40,9 +38,9 @@ class DesktopExperienesBody extends StatelessWidget {
                       decoration: BoxDecoration(
                         gradient: LinearGradient(
                           colors: [
-                            context.colorScheme.primary.withOpacity(0),
+                            context.colorScheme.primary.withAlpha(0),
                             context.colorScheme.primary,
-                            context.colorScheme.primary.withOpacity(0),
+                            context.colorScheme.primary.withAlpha(0),
                           ],
                           begin: Alignment.topCenter,
                           end: Alignment.bottomCenter,
@@ -135,8 +133,8 @@ class DesktopExperienesBody extends StatelessWidget {
                         height: expPointsSize,
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
-                          color: context.colorScheme.onBackground.withOpacity(
-                            0.24,
+                          color: context.colorScheme.onSurface.withValues(
+                            alpha: 0.24,
                           ),
                         ),
                         child: Container(
@@ -144,8 +142,8 @@ class DesktopExperienesBody extends StatelessWidget {
                           height: expPointsSize / 2,
                           decoration: BoxDecoration(
                             shape: BoxShape.circle,
-                            color: context.colorScheme.onBackground.withOpacity(
-                              0.8,
+                            color: context.colorScheme.onSurface.withValues(
+                              alpha: 0.8,
                             ),
                           ),
                         ),

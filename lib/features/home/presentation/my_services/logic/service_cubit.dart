@@ -10,27 +10,17 @@ class ServicesCubit extends Cubit<ServicesState> {
     try {
       emit(const ServicesState.loading());
 
-      // استعلام البيانات من Firestore
       final querySnapshot =
           await FirebaseFirestore.instance.collection('services').get();
 
-      print(
-        'Docs fetched: ${querySnapshot.docs.length}',
-      ); // طباعة عدد الوثائق اللي اتسحبت
       final services =
           querySnapshot.docs
-              .map(
-                (doc) => ServiceModel.fromJson(doc.data()),
-              ) // تحويل كل وثيقة إلى ServiceModel
+              .map((doc) => ServiceModel.fromJson(doc.data()))
               .toList();
 
-      emit(ServicesState.success(services)); // إصدار حالة Success مع البيانات
-      print('Fetched services: $services'); // طباعة البيانات المجمعة
+      emit(ServicesState.success(services));
     } catch (e) {
-      emit(
-        ServicesState.failure(e.toString()),
-      ); // إصدار حالة Failure في حالة حدوث خطأ
-      print('Error fetching services: $e'); // طباعة الخطأ
+      emit(ServicesState.failure(e.toString()));
     }
   }
 }
