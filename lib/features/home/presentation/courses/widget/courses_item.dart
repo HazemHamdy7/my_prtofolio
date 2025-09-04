@@ -18,11 +18,10 @@ class CoursesItem extends StatelessWidget {
         context.go('/courses/${course.link}');
       },
       child: Card(
-        borderOnForeground: true,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
         elevation: 10,
-        shadowColor: Colors.blue.withValues(alpha: 0.9),
-        color: context.colorScheme.onSurface,
+        shadowColor: Theme.of(context).shadowColor,
+        color: Theme.of(context).cardColor,
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: AspectRatio(
@@ -37,7 +36,7 @@ class CoursesItem extends StatelessWidget {
                 SEOText(
                   course.name,
                   style: context.textStyle.bodyleLgBold.copyWith(
-                    color: context.colorScheme.onSurface,
+                    color: context.colorScheme.primary,
                   ),
                   textRenderStyle: TextRendererStyle.header4,
                 ),

@@ -30,7 +30,6 @@ class CustomCardServices extends StatelessWidget {
         border: Border.all(color: context.colorScheme.outline),
       ),
       child: Card(
-        borderOnForeground: true,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
         elevation: 20,
         shadowColor: Colors.blue.withValues(alpha: 0.9),

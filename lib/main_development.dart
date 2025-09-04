@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:my_prtofolio/cubit/cubit/theme_cubit.dart';
+import 'package:my_prtofolio/l10n/app_localizations.dart';
 import 'package:my_prtofolio/shared/appbar/cubit/toogle_language_cubit.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:my_prtofolio/firebase_options.dart';
 import 'package:my_prtofolio/shared/routes/app_route.dart';
 import 'package:my_prtofolio/shared/style/app_theme.dart';
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized(); 
+  WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(const MyApp());
 }
