@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:my_prtofolio/features/home/presentation/experienes/model/experiences.dart';
 import 'package:my_prtofolio/helper/extensions.dart';
+import 'package:my_prtofolio/helper/font_size_responsive.dart';
 import 'package:my_prtofolio/shared/seo_text.dart';
 
 class ExperinceDescriptionItem extends StatelessWidget {
@@ -25,7 +26,7 @@ class ExperinceDescriptionItem extends StatelessWidget {
         Gap(3),
         Expanded(
           child: SEOText(
-            maxLines: 5,
+            maxLines: 6,
             overflow: TextOverflow.ellipsis,
             experiences.description[Localizations.localeOf(
                   context,
@@ -34,6 +35,7 @@ class ExperinceDescriptionItem extends StatelessWidget {
                 'Description',
             style: context.textStyle.bodyMdMedium.copyWith(
               color: context.colorScheme.onSurface,
+              fontSize: getResponsiveFontSize(context, fontSize: 12),
               fontWeight: FontWeight.w400,
             ),
           ),

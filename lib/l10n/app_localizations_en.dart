@@ -35,7 +35,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get ahmed_hamdy_desc_2 =>
-      'I am a Flutter developer with experience in Dart, Firebase, and web development. I have worked on various projects and have a strong understanding of mobile app development.';
+      'Flutter Developer with strong hands-on experience in building scalable and high-performance mobile applications using Flutter and Dart. Specialized in Clean Architecture, Bloc/Cubit state management, and Firebase-based solutions. Proven expertise in RESTful API and HTTP integration with Flutter. Proficient in building reusable UI components, performance optimization and profiling, and delivering production-ready, maintainable cross-platform applications.';
 
   @override
   String get powred_by_flutter => 'Powered by Flutter';

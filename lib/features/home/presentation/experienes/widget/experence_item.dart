@@ -3,6 +3,7 @@ import 'package:gap/gap.dart';
 import 'package:my_prtofolio/features/home/presentation/experienes/model/experiences.dart';
 import 'package:my_prtofolio/features/home/presentation/experienes/widget/experince_description_item.dart';
 import 'package:my_prtofolio/helper/extensions.dart';
+import 'package:my_prtofolio/helper/font_size_responsive.dart';
 import 'package:my_prtofolio/shared/styled_card.dart';
 
 class ExperenceItem extends StatelessWidget {
@@ -24,6 +25,7 @@ class ExperenceItem extends StatelessWidget {
                   'Title',
               style: context.textStyle.bodyleLgBold.copyWith(
                 color: context.colorScheme.primary,
+                fontSize: getResponsiveFontSize(context, fontSize: 15),
               ),
             ),
             Gap(10),

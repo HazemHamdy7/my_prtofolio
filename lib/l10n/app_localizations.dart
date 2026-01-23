@@ -149,7 +149,7 @@ abstract class AppLocalizations {
   /// No description provided for @ahmed_hamdy_desc_2.
   ///
   /// In en, this message translates to:
-  /// **'I am a Flutter developer with experience in Dart, Firebase, and web development. I have worked on various projects and have a strong understanding of mobile app development.'**
+  /// **'Flutter Developer with strong hands-on experience in building scalable and high-performance mobile applications using Flutter and Dart. Specialized in Clean Architecture, Bloc/Cubit state management, and Firebase-based solutions. Proven expertise in RESTful API and HTTP integration with Flutter. Proficient in building reusable UI components, performance optimization and profiling, and delivering production-ready, maintainable cross-platform applications.'**
   String get ahmed_hamdy_desc_2;
 
   /// No description provided for @powred_by_flutter.

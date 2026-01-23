@@ -34,7 +34,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get ahmed_hamdy_desc_2 =>
-      'أنا مطور Flutter ولدي خبرة في Dart وFirebase وتطوير الويب. لقد عملت على مشاريع مختلفة ولدي فهم قوي لتطوير تطبيقات الهواتف المحمولة.';
+      'مطور Flutter يتمتع بخبرة عملية قوية في بناء تطبيقات موبايل قابلة للتوسع وعالية الأداء باستخدام Flutter وDart. متخصص في Clean Architecture وإدارة الحالة باستخدام Bloc/Cubit، وتطوير حلول تعتمد على Firebase. يمتلك خبرة مثبتة في دمج REST APIs وHTTP مع Flutter. متمكن من بناء مكونات UI قابلة لإعادة الاستخدام، تحسين الأداء وتحليله، وتسليم تطبيقات متعددة المنصات جاهزة للإنتاج وسهلة الصيانة.';
 
   @override
   String get powred_by_flutter => 'مدعوم من Flutter';
