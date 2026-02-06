@@ -2,6 +2,10 @@
 class Assets {
   Assets._();
   
+  /// Assets for imagesApps
+  /// assets/images/apps.jpeg
+  static const String imagesApps = "assets/images/apps.jpeg";
+
   /// Assets for imagesCode
   /// assets/images/code.png
   static const String imagesCode = "assets/images/code.png";
@@ -17,6 +21,14 @@ class Assets {
   /// Assets for imagesComputer
   /// assets/images/computer.png
   static const String imagesComputer = "assets/images/computer.png";
+
+  /// Assets for imagesCv
+  /// assets/images/cv.png
+  static const String imagesCv = "assets/images/cv.png";
+
+  /// Assets for imagesDart
+  /// assets/images/dart.jpg
+  static const String imagesDart = "assets/images/dart.jpg";
 
   /// Assets for imagesEgyptFlag
   /// assets/images/egypt-flag.png
@@ -45,6 +57,10 @@ class Assets {
   /// Assets for imagesProgramming
   /// assets/images/programming.png
   static const String imagesProgramming = "assets/images/programming.png";
+
+  /// Assets for imagesUpload
+  /// assets/images/upload.jpg
+  static const String imagesUpload = "assets/images/upload.jpg";
 
   /// Assets for imagesUsaFlag
   /// assets/images/usa-flag.png

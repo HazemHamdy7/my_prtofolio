@@ -1,16 +1,31 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
+class ServiceModel {
+  final Map<String, String> title;
+  final Map<String, String> description;
+  final String images;
+  final String url;
 
-part 'service_model.freezed.dart';
-part 'service_model.g.dart';
+  ServiceModel({
+    required this.title,
+    required this.description,
+    required this.images,
+    required this.url,
+  });
 
-@freezed
-abstract class ServiceModel with _$ServiceModel {
-  const factory ServiceModel({
-    required Map<String, String> title, // لتحويل العنوان من نوع Map
-    required Map<String, String> description, // لتحويل الوصف من نوع Map
-  
-  }) = _ServiceModel;
+  factory ServiceModel.fromJson(Map<String, dynamic> json) {
+    return ServiceModel(
+      title: Map<String, String>.from(json['title'] as Map),
+      description: Map<String, String>.from(json['description'] as Map),
+      images: json['imageUrl'] as String? ?? '',
+      url: json['url'] as String? ?? '',
+    );
+  }
 
-  factory ServiceModel.fromJson(Map<String, dynamic> json) =>
-      _$ServiceModelFromJson(json);
+  Map<String, dynamic> toJson() {
+    return {
+      'title': title,
+      'description': description,
+      'imageUrl': images,
+      'url': url,
+    };
+  }
 }
