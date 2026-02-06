@@ -6,13 +6,35 @@ import 'package:my_prtofolio/features/home/presentation/courses/model/course.dar
 class CoursesCubit extends Cubit<CoursesState> {
   CoursesCubit() : super(CoursesInitial());
 
+  // Local image URLs in order
+  final List<String> _localImages = [
+    'assets/images/dart.png',
+    'assets/images/code2.png',
+    'assets/images/code3.png',
+  ];
+
   Future<void> fetchCourses() async {
     try {
       emit(CoursesLoading());
       final querySnapshot =
           await FirebaseFirestore.instance.collection('courses').get();
-      final courses =
-          querySnapshot.docs.map((doc) => Course.fromJson(doc.data())).toList();
+
+      // Get courses from Firebase with local images
+      final courses = <Course>[];
+      for (int i = 0; i < querySnapshot.docs.length; i++) {
+        final courseData = Course.fromJson(querySnapshot.docs[i].data());
+        final localImage = _localImages[i % _localImages.length];
+
+        // Create new course with local image
+        final updatedCourse = Course(
+          name: courseData.name,
+          imageUrl: localImage,
+          description: courseData.description,
+          link: courseData.link,
+        );
+        courses.add(updatedCourse);
+      }
+
       emit(CoursesLoaded(courses: courses));
     } catch (e) {
       emit(CoursesError(message: e.toString()));

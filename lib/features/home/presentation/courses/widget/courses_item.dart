@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:go_router/go_router.dart';
 import 'package:my_prtofolio/features/home/presentation/courses/model/course.dart';
 import 'package:my_prtofolio/helper/extensions.dart';
 import 'package:my_prtofolio/helper/url_launcher.dart';
@@ -33,20 +32,7 @@ class CoursesItem extends StatelessWidget {
                   child: SizedBox(
                     height: 150,
                     width: double.infinity,
-                    child: Image.network(
-                      course.imageUrl,
-
-                      fit: BoxFit.cover,
-                      loadingBuilder: (context, child, loadingProgress) {
-                        if (loadingProgress == null) return child;
-                        return const Center(child: CircularProgressIndicator());
-                      },
-                      errorBuilder: (context, error, stackTrace) {
-                        return Center(
-                          child: Image.asset('assets/images/dart.jpg'),
-                        );
-                      },
-                    ),
+                    child: _buildCourseImage(),
                   ),
                 ),
 
@@ -79,5 +65,32 @@ class CoursesItem extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  // Helper method to build course image (supports both local and network images)
+  Widget _buildCourseImage() {
+    // Check if image is local (starts with 'assets/')
+    if (course.imageUrl.startsWith('assets/')) {
+      return Image.asset(
+        course.imageUrl,
+        fit: BoxFit.cover,
+        errorBuilder: (context, error, stackTrace) {
+          return Center(child: Image.asset('assets/images/dart.jpg'));
+        },
+      );
+    } else {
+      // Network image
+      return Image.network(
+        course.imageUrl,
+        fit: BoxFit.cover,
+        loadingBuilder: (context, child, loadingProgress) {
+          if (loadingProgress == null) return child;
+          return const Center(child: CircularProgressIndicator());
+        },
+        errorBuilder: (context, error, stackTrace) {
+          return Center(child: Image.asset('assets/images/dart.jpg'));
+        },
+      );
+    }
   }
 }
