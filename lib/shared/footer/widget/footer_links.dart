@@ -40,7 +40,7 @@ class FooterLinks extends StatelessWidget {
           onPressed:
               () => openUrlOnTap(
                 context: context,
-                url: 'https://www.youtube.com/@HazemHamdy7',
+                url: 'https://www.youtube.com/@NextCodeHazem',
               ),
         ),
       ],
