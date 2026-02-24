@@ -39,7 +39,7 @@ class MyApp extends StatelessWidget {
                   GlobalCupertinoLocalizations.delegate,
                 ],
                 supportedLocales: const [Locale('en'), Locale('ar')],
-
+//Test
                 theme: AppTheme.light,
                 darkTheme: AppTheme.dark,
                 themeMode: themeMode, //
