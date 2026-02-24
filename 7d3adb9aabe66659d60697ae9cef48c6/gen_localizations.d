@@ -1,1 +1,0 @@
- D:\\projects\\2025\\my_prtofolio-2\\lib\\l10n\\app_localizations_ar.dart D:\\projects\\2025\\my_prtofolio-2\\lib\\l10n\\app_localizations_en.dart D:\\projects\\2025\\my_prtofolio-2\\lib\\l10n\\app_localizations.dart:  D:\\projects\\2025\\my_prtofolio-2\\l10n.yaml D:\\projects\\2025\\my_prtofolio-2\\lib\\l10n\\app_ar.arb D:\\projects\\2025\\my_prtofolio-2\\lib\\l10n\\app_en.arb
